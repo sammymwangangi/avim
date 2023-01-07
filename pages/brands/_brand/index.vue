@@ -22,7 +22,7 @@
         <h1 class="heading_one tw-text-center tw-text-red-600">
           {{
             brand.headerOne ||
-              'Nairobi Drinks - Best alcohol delivery services in Kenya'
+              'Avimar International - Click it, Own It'
           }}
         </h1>
       </div>
@@ -353,7 +353,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

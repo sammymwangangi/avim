@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'nairobidrinks',
+      name: 'avimarint',
       exec_mode: 'cluster', // Optional: If you want it run multiple instances.
       instances: 'max', // Or a number of instances.
       // 'max' auto detects how many CPU cores there are.

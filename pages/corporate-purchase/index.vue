@@ -36,39 +36,7 @@
             {{ meta.headerOne || '' }}
           </h1>
         </div>
-        <div class="tw-p-2">
-          <p>
-            Corporate purchase of alcoholic and non alcoholic drinks is of high
-            regard at <b>Nairobi Drinks Limited.</b> Quality service from timely
-            supply of drinks and other complimentary products and clear billing
-            is assurance to our esteemed buyers. Nairobi Drinks Limited being a
-            drinks expert shall offer without charge the consultancy on matters
-            such as what drinks are best and the price list for clear budgeting
-            of the corporate or whatever advice the corporate might require. It
-            is our desire to make your corporate occasions comparable to none
-            and for your office experience to be the best by stocking the best
-            of drinks for you.
-          </p>
-
-          <p>
-            <b>Nairobi Drinks Limited</b> is in a position and is best suited to
-            supply corporate purchases of however minimal or extensive the
-            corporate would want to go. Check for a background research on the
-            vast drinks we stock on our website or mobile app or simply reach us
-            on <b>0714798820</b>.
-          </p>
-          <p>
-            Arrangements for payments are easy as Nairobi Drinks Limited offers
-            a variety of payment methods from cards ,mpesa to cash.
-          </p>
-
-          <p>
-            For record keeping and matters around filing, Nairobi Drinks Limited
-            offers receipts of sale and ETRs or any other reference or support
-            documentation the corporate might deem important. Choose the best.
-            Keep it Nairobi Drinks.
-          </p>
-        </div>
+        
       </div>
     </section>
   </div>
@@ -110,7 +78,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

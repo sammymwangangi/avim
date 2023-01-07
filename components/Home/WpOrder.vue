@@ -71,7 +71,7 @@ export default {
       quantity: 1,
       item: {},
       location:'',
-      phoneNumber:'+254714798820',
+      phoneNumber:'+254731722682',
     }
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
         this.$toast.warning('Quantity cannot be less than 1');
         this.$bvModal.hide(`wp-${this.activeProduct.url}-${this.displayId}`);
       } else {
-        let msg = `Hello *Nairobi drinks*, I would like `
+        let msg = `Hello *Avimar International*, I would like `
         let url
         if (this.quantity > 1) {
           let total=(this.quantity)*(this.price.discount);

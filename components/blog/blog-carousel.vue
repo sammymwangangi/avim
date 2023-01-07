@@ -3,7 +3,7 @@
     <b-row>
       <b-col class="carousel tw-text-center">
         <div class="headers">
-          <h1 class="tw-text-red-600">Nairobi Drinks Blog - Let's Talk About Alcohol</h1>
+          <h1 class="tw-text-red-600">Avimar International - Click it, Own It</h1>
         </div>
       </b-col>
     </b-row>

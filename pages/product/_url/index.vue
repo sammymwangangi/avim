@@ -233,7 +233,7 @@
                     </tr>
                     <tr>
                       <td class="tw-p-2 tw-whitespace-nowrap">
-                        <span class="tw-font-semibold">Alcohol Content</span>
+                        <span class="tw-font-semibold" Content</span>
                       </td>
                       <td class="tw-p-2 tw-whitespace-nowrap">{{ raw_product.product.percentage }}%</td>
                     </tr>
@@ -363,7 +363,7 @@
           <div class="tw-w-full" v-if="raw_product.product.videoLink">
             <lite-youtube
               :videoid="`${raw_product.product.videoLink.split('/')[4]}`"
-              playlabel="Nairobi Drinks"
+              playlabel="Avimar International"
               params="controls=0&modestbranding=2&rel=0&enablejsapi=1"
             />
           </div>
@@ -702,40 +702,32 @@ export default {
       }</a>  family. It is classified as
       <a href="/${this.raw_product.category.url}/${
         this.product.subcategory[0]
-      }">${this.product.subcategory[0]}</a> and is produced in <b>${
-        this.product.country
-      }</b>. ${this.product.name} has <b>${
-        this.product.percentage
-      }% ABV</b> (Alcohol By Volume). This ${
+      }">${this.product.subcategory[0]}</a>
+      }</b>. This ${
         this.product.category
-      } comes in ${sizes}. ${inThisFamily()} This product is currently ${inStock}. Enjoy <b>free alcohol delivery</b> and <a href="/">${
+      } comes in ${sizes} Kg. ${inThisFamily()} This product is currently ${inStock}. Enjoy <b>free delivery</b> and <a href="/">${
         this.product.name
-      } best prices in Kenya</a>. We are offering it in both wholesale and retail prices hence you can order <b> ${
-        this.product.name
-      }
-${this.product.category}</b> for parties and other occasions.
+      } best prices in Kenya</a>.
 
 <p>Buy ${this.product.name} at the best ${
         this.product.name
       } price in Kenya. ${_related()}</p>
 
-<p><b>Nairobi Drinks</b> is by large the best <a href="/">online liquor store</a> in Kenya. Get free and fast <a href="/">alcohol delivery in Nairobi</a> today for retail, wholesale and corporate purchases. For orders withing Nairobi our Delivery time is 10 – 30 mins and less than 24 hours to other parts of the country.</p>
-
-<b>Nairobi Drinks</b> offers flexible payment methods :
+<b>Avimar International</b> offers flexible payment methods :
 <ul>
-    <li> Mpesa (till - 723079 / send money - 0714798820)</li>
+    <li> Mpesa (send money - +254731722682)</li>
     <li> VISA card</li>
     <li>  MASTER card</li>
     <li>  CASH</li>
     <li>  PayPal</li>
     <li> Online payment</li>
     </ul>
-To order <b>genuine drinks</b> online in Kenya call, sms, WhatsApp 0714798820. For a great experience, download our Mobile App to keep posted on our offers. <b>Nairobi Drinks</b> being a ${
+To order <b>genuine products</b> online in Kenya call, sms, WhatsApp 0731722682. For a great experience, download our Mobile App to keep posted on our offers. <b>Avimar International</b> being a ${
         this.product.category
-      } enthusiast and a drinks expert offers updates, information and fun facts via our blog. Follow us on <a href="https://www.facebook.com/nairobidrinks/" target="_blank"
-                     >facebook</a>, <a href="https://www.twitter.com/nairobidrinks/" target="_blank"
-                     >twitter</a> and on <a href="https://instagram.com/nairobidrinks/" target="_blank"
-                     >instagram</a> for updates and to check for alcohol offers.
+      } enthusiast offers updates, information and fun facts via our blog. Follow us on <a href="https://www.facebook.com/avimar/" target="_blank"
+                     >facebook</a>, <a href="https://www.twitter.com/avimar/" target="_blank"
+                     >twitter</a> and on <a href="https://instagram.com/avimar/" target="_blank"
+                     >instagram</a> for updates and to check for offers.
                      <p>
                      ${this.product.description}
                      </p>`;
@@ -843,8 +835,8 @@ To order <b>genuine drinks</b> online in Kenya call, sms, WhatsApp 0714798820. F
         navigator
           .share({
             title: `${this.product.name}`,
-            text: `Check out ${this.product.name} from Nairobi drinks`,
-            url: `https://nairobidrinks.co.ke/product/${this.product.url}`,
+            text: `Check out ${this.product.name} from Avimar International`,
+            url: `https://avimar.online/product/${this.product.url}`,
           })
           .then(() => console.log('Successful share'))
           .catch((error) => console.log(error));
@@ -881,7 +873,7 @@ To order <b>genuine drinks</b> online in Kenya call, sms, WhatsApp 0714798820. F
         {
           hid: 'og:url',
           name: 'og:url',
-          content: `https://nairobidrinks.co.ke/product/${product.url}`,
+          content: `https://avimar.online/product/${product.url}`,
         },
         { hid: 'og:image', name: 'og:image', content: image },
         { hid: 'og:site_name', name: 'og:site_name', content: 'nairobidrinks' },
@@ -895,7 +887,7 @@ To order <b>genuine drinks</b> online in Kenya call, sms, WhatsApp 0714798820. F
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

@@ -76,7 +76,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

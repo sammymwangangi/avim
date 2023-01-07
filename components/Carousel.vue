@@ -25,7 +25,7 @@
             <img
               class="d-block"
               :src="`${carousel.image_url}`"
-              alt="Nairobi Drinks"
+              alt="Avimar International"
               height="270"
               width="600"
             />
@@ -54,7 +54,7 @@
             <img
               class="d-block"
               :src="`${carousel.image_url}`"
-              alt="Nairobi Drinks"
+              alt="Avimar International"
               height="270"
               width="600"
             />

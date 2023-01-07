@@ -22,7 +22,7 @@
       <h1 class="heading_one tw-text-center tw-capitalize tw-text-red-600">
         {{
           meta.headerOne ||
-            'Nairobi Drinks - Best alcohol delivery services in Kenya'
+            'Avimar International - Click it, Own It'
         }}
       </h1>
     </div>
@@ -107,50 +107,7 @@
                 </div>
               </div>
             </div>
-            <div
-              class="tw-text-left tw-px-2 tw-py-2 tw-my-2 tw-rounded tw-bg-white"
-              v-show="windowWidth > 576"
-            >
-              <span class="tw-text-red-600 tw-my-2 tw-uppercase"
-                >Sort by Alcohol %</span
-              >
-              <div class="text-justify d-inline pl-3">
-                <div class="form-check">
-                  <input
-                    class="form-check-input tw-ring-1 tw-ring-gray-600 focus:tw-ring-0"
-                    type="radio"
-                    name="sort_by"
-                    v-model="sort_by"
-                    @change="filterProducts"
-                    id="alcoholPercentage1"
-                    value="alcohol_high"
-                  />
-                  <label class="form-check-label" for="alcoholPercentage1">
-                    High-low
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input tw-ring-1 tw-ring-gray-600 focus:tw-ring-0"
-                    type="radio"
-                    name="sort_by"
-                    v-model="sort_by"
-                    @change="filterProducts"
-                    id="alcoholPercentage2"
-                    value="alcohol_low"
-                  />
-                  <label class="form-check-label" for="alcoholPercentage2">
-                    Low-High
-                  </label>
-                </div>
-                <hr />
-                <nuxt-link
-                  class="text-decoration-none text-dark"
-                  to="/countries"
-                  >Shop By Country
-                </nuxt-link>
-              </div>
-            </div>
+            
 
             <div
               class="tw-py-2 tw-rounded-0 tw-border-0 tw-bg-white"
@@ -419,7 +376,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

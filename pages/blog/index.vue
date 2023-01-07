@@ -147,13 +147,13 @@ export default {
         {
           hid: 'og:url',
           name: 'og:url',
-          content: `https://nairobidrinks.co.ke/blog`,
+          content: `https://avimar.online/blog`,
         },
       ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

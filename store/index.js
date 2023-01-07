@@ -1,8 +1,8 @@
 export const state = () => ({
-  phone: '+254714798820',
-  email: 'orders@nairobidrinks.co.ke',
-  name: 'Nairobi Drinks',
-  publishedBy: 'Carson',
+  phone: '+254731722682',
+  email: 'orders@avimar.online',
+  name: 'Avimar International',
+  publishedBy: 'Avimar',
   savedInfo: {},
   reviewInfo: {},
   meta: [],

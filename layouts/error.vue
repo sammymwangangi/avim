@@ -65,8 +65,8 @@ export default {
   head() {
     const meta = {
       metadescription:
-        'Buy alcohol online from Nairobi Drinks, the leading online liquor store in Kenya. Enjoy wide varieties, discounted prices,  free & fast deliveries in 20 mins',
-      title: 'Nairobi Drinks - Best alcohol delivery services in Kenya',
+        'Buy products online from Avimar International. Enjoy wide varieties, discounted prices,  free & fast deliveries in less than 30 mins',
+      title: 'Avimar International - Click it, Own It',
     };
     return {
       title: meta.title,

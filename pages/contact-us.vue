@@ -158,7 +158,7 @@
             <div class="tw-flex tw-space-x-2 tw-my-4">
               <div>
                 <a
-                  href="https://www.facebook.com/nairobidrinks/"
+                  href="https://www.facebook.com/avimar/"
                   target="_blank"
                   class="text-decoration-none "
                   ><fa
@@ -170,7 +170,7 @@
               </div>
               <div>
                 <a
-                  href="https://www.twitter.com/nairobidrinks/"
+                  href="https://www.twitter.com/avimar/"
                   target="_blank"
                   class="text-decoration-none "
                   ><fa
@@ -182,7 +182,7 @@
               </div>
               <div>
                 <a
-                  href="https://instagram.com/nairobidrinks/"
+                  href="https://instagram.com/avimar/"
                   target="_blank"
                   class="text-decoration-none "
                 >
@@ -265,13 +265,13 @@ export default {
         {
           hid: 'og:url',
           name: 'og:url',
-          content: `https://nairobidrinks.co.ke/contact-us`,
+          content: `https://avimar.online/contact-us`,
         },
       ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

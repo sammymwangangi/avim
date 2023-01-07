@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       position: 0,
-      phone: '+254714798820',
+      phone: '+254731722682',
     };
   },
   methods: {

@@ -44,12 +44,12 @@
         <div id="printList" v-else>
           <!-- print header -->
           <div style="text-align:center;border-bottom:2px solid #D45052 ">
-            <img :src="`/nlogo.png`" alt="logo" />
-            <h5>Nairobi Drinks’ Wine and Spirits Pricelist</h5>
+            <img :src="`/logo.png`" alt="logo" />
+            <h5>Avimar International</h5>
             <p>
-              <span style="color:#D45052;">+254714798820</span><br />
-              nairobidrinks@gmail.com<br />
-              Website: https://nairobidrinks.co.ke
+              <span style="color:#D45052;">+254731722682</span><br />
+              avimar@gmail.com<br />
+              Website: https://avimar.online
             </p>
           </div>
           <!-- end print header -->
@@ -167,7 +167,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
     };

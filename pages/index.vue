@@ -296,7 +296,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://nairobidrinks.co.ke' + this.$route.path,
+          href: 'https://avimar.online' + this.$route.path,
         },
       ],
       __dangerouslyDisableSanitizers: ['script'],
@@ -306,11 +306,11 @@ export default {
           {
             "@context": "http://schema.org",
             "@type": "Organization",
-            "url": "https://www.nairobidrinks.co.ke",
-            "logo": "https://www.nairobidrinks.co.ke/images/nairobi-logo.png",
+            "url": "https://avimar.online",
+            "logo": "https://avimar.online/images/logo.png",
             "contactPoint": [{
               "@type": "ContactPoint",
-              "telephone": "+254714798820",
+              "telephone": "+254731722682",
               "contactType": "customer service"
             }]
           }
