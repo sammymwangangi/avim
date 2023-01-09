@@ -579,10 +579,10 @@ export default {
     color: #202326;
   }
   i.heart {
-    color: #ed1b24;
+    color: #277fbe;
   }
   #spring {
-    color: #ed1b24;
+    color: #277fbe;
   }
   #search {
     width: 468px;
@@ -621,11 +621,11 @@ export default {
     margin-top: 0;
     padding-top: 1px;
     text-transform: capitalize;
-    background: #ffffff;
-    color: #000000;
+    background: #000000;
+    color: #ffffff;
     border-radius: 0;
-    width: 100vw;
-    height: 100vh;
+    height: auto;
+    max-height: 450px;
     overflow-x: hidden;
   }
   .dropdown-menu:hover {
@@ -650,7 +650,7 @@ export default {
     }
     .dropdown-menu {
       padding: 0;
-      width: 100vw;
+      width: auto;
     }
     .scrollable-menu {
       height: auto;
