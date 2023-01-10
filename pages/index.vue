@@ -107,7 +107,7 @@
     <!-- drinks on offer -->
     <section class="tw-container mx-auto" id="container-2">
       <div class="tw-p-2">
-        <h2 class="tw-capitalize tw-mt-4">Drinks on offer</h2>
+        <h2 class="tw-capitalize tw-mt-4">Trending Products</h2>
         <LazyHydrate when-visible>
           <Products
               :products="offers"
@@ -125,7 +125,7 @@
         "
           id="headingTwo"
       >
-        Shop by Brand
+        Shop by Collection
       </h2>
     </div>
 
@@ -190,27 +190,24 @@
     </div>
 
     <div class="tw-container mx-auto tw-px-4">
-      <div
-          class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded"
-      >
-        <div :class="{ readLess: readMore == true }" class="tw-px-4 tw-py-4">
-          <span v-html="meta.footercontent"></span>
-        </div>
-        <div v-if="readMore == true" class="read-more">
-          <a
-              @click="readMore = !readMore"
-              class="tw-cursor-pointer tw-my-6 tw-text-gray-900 hover:tw-text-red-600 tw-text-left tw-px-4 tw-py-1 tw-rounded-full tw-ring-1 tw-ring-red-600 tw-no-underline"
-          >Show More</a
-          >
-        </div>
-        <div v-else class="read-less">
-          <a
-              @click="readMore = !readMore"
-              class="tw-cursor-pointer tw-my-2 tw-text-gray-900 hover:tw-text-red-600 tw-text-left tw-px-4 tw-py-1 tw-rounded-full tw-ring-1 tw-ring-red-600 tw-no-underline"
-          >Show Less</a
-          >
-        </div>
-      </div>
+      <section
+                class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
+                <Link href="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600">Avimar
+                    International</Link>
+                <div class="tw-mt-6 tw-text-base tw-text-gray-500">
+                    <b>Avimar International</b> is a Kenyan E-commerce company currently operating locally but with
+                    plans
+                    to expand to other East African Countries. Our head office is situated in 7Km from Nairobi CBD.
+                    It was founded in 2022 by two young entrepreneurs who also have interests in Tech and Financial
+                    industry.
+                    Our business model caters to customers both in urban and rural areas. <br/>
+
+                    The platform provides a wide range of products covering Furniture, Metalwork Products like
+                    wheelbarrows, home appliances, smartphones and accessories, spare parts , electronic products
+                    such as computers, tw-tablets, and TVs, beauty and fashion products, among others
+
+                </div>
+            </section>
     </div>
   </div>
 </template>

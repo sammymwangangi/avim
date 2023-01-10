@@ -182,8 +182,17 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/tailwindcss',
     'nuxt-delay-hydration',
-    '@nuxt/postcss8'
+    '@nuxt/postcss8',
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    display: "swap",
+  families: {
+    Poppins: true
+  }
+},
+
   fontawesome: {
     component: 'fa',
     icons: {
@@ -220,7 +229,7 @@ export default {
     }
   },
   googleAnalytics: {
-    id: 'UA-87949390-1'
+    // id: 'UA-87949390-1'
   },
   /*
    ** Build configuration

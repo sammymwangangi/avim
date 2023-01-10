@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     './components/**/*.{vue,js}',
@@ -23,7 +25,11 @@ module.exports = {
       '6': '6px',
       '8': '8px',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+      poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+    },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

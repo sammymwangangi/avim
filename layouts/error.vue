@@ -94,7 +94,7 @@ main {
   background: #fff;
   justify-content: center;
   align-items: center;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 main #g6219 {
