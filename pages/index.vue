@@ -129,85 +129,66 @@
       </h2>
     </div>
 
-    <div class="tw-container mx-auto tw-px-4 tw-py-4 tw-my-2">
-      <div
-          class="
-          tw-bg-white tw-rounded tw-shadow-sm tw-mb-3 tw-pt-4 tw-pl-3 tw-pb-2
-        "
-          v-for="(brand, index) in homeBrands"
-          :key="index"
+    <div class="tw-container tw-mx-auto tw-px-4 tw-py-4 tw-my-2">
+      <section
+          aria-labelledby="collection-heading"
+          class="tw-mx-auto tw-max-w-xl tw-px-4 tw-pt-24 sm:tw-px-6 sm:tw-pt-32 lg:tw-max-w-7xl lg:tw-px-8"
       >
-        <div class="flex flex-col">
-          <div class="tw-text-xl tw-font-medium tw-pb-2 tw-text-red-600">
-            {{ index | capitalize }}
-          </div>
-          <a
-              :href="`/brands/${item.url}`"
-              class="
-              clearfix
-              d-inline-block
-              text-nowrap text-dark
-              tw-p-1 tw-mb-2 tw-no-underline
-            "
-              v-for="(item, key) in brand"
-              :key="key"
-          ><span
-              v-if="key < limit_by"
-              class="
-                hover:tw-bg-red-600 hover:tw-text-white
-                tw-py-2
-                tw-px-3
-                tw-border
-                tw-border-gray-400
-                tw-rounded-md
-                tw-shadow-sm
-                tw-text-sm
-                tw-leading-4
-                tw-font-medium
-                tw-text-gray-700
-              "
-          >{{ item.brand | capitalize }}</span
-          >
-          </a>
-        </div>
-        <a
-            href="javascript:void(0)"
-            class="
-            tw-mt-1 tw-text-gray-900
-            hover:tw-text-red-900
-            tw-text-left
-            tw-px-4
-            tw-py-1
-            tw-rounded-full
-            tw-ring-1
-            tw-ring-red-900
-            tw-no-underline
-          "
-            @click="simple_toggle(default_limit, brand.length)"
-        >{{ limit_by === 13 ? 'Show More' : 'Show Less' }}</a
+        <h2
+            id="collection-heading"
+            class="tw-text-2xl tw-font-bold tw-tracking-tight tw-text-gray-900"
         >
-      </div>
+          Shop by Collection
+        </h2>
+        <p class="tw-mt-4 tw-text-base tw-text-gray-500">
+          Each season, we collaborate with world-class dealers to create a
+          collection inspired by the natural world.
+        </p>
+
+        <div class="tw-space-y-6 lg:tw-grid lg:tw-grid-cols-3 lg:tw-gap-x-8 lg:tw-space-y-0">
+          <a
+              v-for="collection in collections"
+            :href="collection.href"
+            class="tw-group tw-block"
+        >
+          <div
+              aria-hidden="true"
+              class="tw-aspect-w-3 tw-aspect-h-2 tw-overflow-hidden tw-rounded-lg group-hover:tw-opacity-75 lg:aspect-w-5 lg:aspect-h-6"
+          >
+            <img
+                :src="collection.imageSrc"
+                :alt="collection.imageAlt"
+                class="tw-h-full tw-w-full tw-object-contain tw-object-center"
+                width={500}
+                height={500}
+            />
+          </div>
+
+        </a>
+        </div>
+      </section>
     </div>
 
     <div class="tw-container mx-auto tw-px-4">
       <section
-                class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
-                <Link href="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600">Avimar
-                    International</Link>
-                <div class="tw-mt-6 tw-text-base tw-text-gray-500">
-                    <b>Avimar International</b> is a Kenyan E-commerce company currently operating locally but with
-                    plans
-                    to expand to other East African Countries. Our head office is situated in 7Km from Nairobi CBD.
-                    It was founded in 2022 by two young entrepreneurs who also have interests in Tech and Financial
-                    industry.
-                    Our business model caters to customers both in urban and rural areas. <br/>
+          class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
+        <Link href="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600">Avimar
+          International
+        </Link>
+        <div class="tw-mt-6 tw-text-base tw-text-gray-500">
+          <b>Avimar International</b> is a Kenyan E-commerce company currently operating locally but with
+          plans
+          to expand to other East African Countries. Our head office is situated in 7Km from Nairobi CBD.
+          It was founded in 2022 by two young entrepreneurs who also have interests in Tech and Financial
+          industry.
+          Our business model caters to customers both in urban and rural areas. <br/>
 
-                    The platform provides a wide range of products covering Furniture, Metalwork Products like
-                    wheelbarrows, home appliances, smartphones and accessories, spare parts , electronic products
-                    such as computers, tw-tablets, and TVs, beauty and fashion products, among others
+          The platform provides a wide range of products covering Furniture, Metalwork Products like
+          wheelbarrows, home appliances, smartphones and accessories, spare parts , electronic products
+          such as computers, tw-tablets, and TVs, beauty and fashion products, among others
 
-                </div>
-            </section>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -239,6 +220,29 @@ export default {
       default_limit: 13,
       limit_by: 13,
       readMore: true,
+      collections: [
+        {
+          name: "Handcrafted Collection",
+          href: "#",
+          imageSrc: "/images/deal1.jpg",
+          imageAlt: "Brown leather key ring with brass metal loops and rivets on wood table.",
+          description: "Keep your phone, keys, and wallet together, so you can lose everything at once.",
+        },
+        {
+          name: "Organized Desk Collection",
+          href: "#",
+          imageSrc: "/images/deal2.jpg",
+          imageAlt: "Natural leather mouse pad on white desk next to porcelain mug and keyboard.",
+          description: "The rest of the house will still be a mess, but your desk will look great.",
+        },
+        {
+          name: "Focus Collection",
+          href: "#",
+          imageSrc: "/images/deal3.jpg",
+          imageAlt: "Person placing task list card into walnut card holder next to felt carrying case on leather desk pad.",
+          description: "Be more productive than enterprise project managers with a single piece of paper.",
+        },
+      ],
     };
   },
   computed: {
