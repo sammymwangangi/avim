@@ -91,9 +91,9 @@
 
 
     <!-- end products column-->
-    <section class="tw-container mx-auto">
-      <div class="p-2">
-        <h2 class="tw-capitalize">Top Picks</h2>
+    <section class="tw-container tw-mx-auto tw-mt-2">
+      <div class="tw-p-2">
+        <h2 class="tw-capitalize">Recommended for you</h2>
         <LazyHydrate when-visible>
           <Products
               :products="topPicks"
@@ -105,7 +105,7 @@
     </section>
 
     <!-- drinks on offer -->
-    <section class="tw-container mx-auto" id="container-2">
+    <section class="tw-container tw-mx-auto" id="container-2">
       <div class="tw-p-2">
         <h2 class="tw-capitalize tw-mt-4">Trending Products</h2>
         <LazyHydrate when-visible>
@@ -118,21 +118,10 @@
     </section>
     <!-- end drinks on offer-->
 
-    <div class="tw-container mx-auto tw-px-4 tw-py-4 tw-my-2">
-      <h2
-          class="
-          tw-text-lg tw-bg-white tw-text-center tw-p-2 tw-border-bottom tw-mb-2
-        "
-          id="headingTwo"
-      >
-        Shop by Collection
-      </h2>
-    </div>
-
     <div class="tw-container tw-mx-auto tw-px-4 tw-py-4 tw-my-2">
       <section
           aria-labelledby="collection-heading"
-          class="tw-mx-auto tw-max-w-xl tw-px-4 tw-pt-24 sm:tw-px-6 sm:tw-pt-32 lg:tw-max-w-7xl lg:tw-px-8"
+          class="tw-px-4 tw-pt-10 sm:tw-px-6 sm:tw-pt-32 lg:tw-max-w-7xl lg:tw-px-8"
       >
         <h2
             id="collection-heading"
@@ -169,13 +158,13 @@
       </section>
     </div>
 
-    <div class="tw-container mx-auto tw-px-4">
+    <div class="tw-container tw-mx-auto tw-px-4">
       <section
           class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
-        <Link href="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600">Avimar
+        <NuxtLink to="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600" >Avimar
           International
-        </Link>
-        <div class="tw-mt-6 tw-text-base tw-text-gray-500">
+        </NuxtLink>
+        <div class="tw-mt-6 tw-text-base tw-text-gray-500 font-poppins">
           <b>Avimar International</b> is a Kenyan E-commerce company currently operating locally but with
           plans
           to expand to other East African Countries. Our head office is situated in 7Km from Nairobi CBD.

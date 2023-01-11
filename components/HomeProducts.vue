@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 lg:tw-grid-cols-6 tw-gap-2"
+      class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 lg:tw-grid-cols-5 tw-gap-2"
     >
       <div
         class="tw-flex tw-flex-col tw-min-h-[360px] tw-bg-white tw-relative tw-p-1 tw-shadow-md hover:tw-shadow-xl tw-rounded-md tw-transition tw-duration-700 tw-ease-in-out tw-transform hover:-tw-translate-y-1 hover:tw-scale-100 tw-overflow-hidden"
@@ -33,13 +33,11 @@
           />
         </nuxt-link>
         <div
-          class="tw-text-gray-500 tw-text-left tw-capitalize tw-font-thin tw-text-xs tw-italic tw-w-auto"
+          class="tw-text-gray-400 tw-text-left tw-capitalize tw-font-thin tw-text-xs tw-italic tw-w-auto"
         >
           <template v-if="Object.keys(product.subcategory).length !== 0">{{
             product.subcategory[0].replace(/-/g, ' ')
           }}</template>
-          <template>{{ '' }}</template>
-          | {{ product.percentage }}%
         </div>
         <div class="tw-text-left">
           <nuxt-link
@@ -47,13 +45,13 @@
             class="tw-no-underline tw-text-left"
           >
             <div
-              class="hover:tw-z-50 tw-text-gray-600 tw-font-semibold tw-text-sm tw-capitalize tw-line-clamp-2"
+              class="hover:tw-z-50 tw-text-gray-700 tw-mt-2 tw-text-sm tw-capitalize tw-line-clamp-2"
               :title="product.name"
             >
               {{ product.name | truncate(20, '...') }}
             </div>
             <ul
-              class="list-unstyled tw-space-y-1 tw-text-xs"
+              class="list-unstyled tw-space-y-1 tw-text-md tw-mt-2"
               v-for="quantity in product.quantities"
               :key="quantity.quantity"
             >
@@ -61,8 +59,7 @@
                 class="tw-flex tw-justify-start"
                 style="font-family: 'Roboto', sans-serif;margin-bottom:-1rem"
               >
-                <div class="tw-text-gray-800">{{ quantity.quantity }}</div>
-                <span class="tw-font-semibold tw-text-gray-900 tw-ml-2">{{
+                <span class="tw-font-semibold tw-text-gray-900">{{
                   quantity.discount | currency
                 }}</span>
               </li>
@@ -88,11 +85,7 @@
             :disabled="product.available === false"
             class="tw-self-end"
           >
-            <fa
-              :icon="['fas', 'cart-plus']"
-              title="cart"
-              style="font-size:1.2em;"
-            ></fa>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6"><path d="M1 1.75A.75.75 0 011.75 1h1.628a1.75 1.75 0 011.734 1.51L5.18 3a65.25 65.25 0 0113.36 1.412.75.75 0 01.58.875 48.645 48.645 0 01-1.618 6.2.75.75 0 01-.712.513H6a2.503 2.503 0 00-2.292 1.5H17.25a.75.75 0 010 1.5H2.76a.75.75 0 01-.748-.807 4.002 4.002 0 012.716-3.486L3.626 2.716a.25.25 0 00-.248-.216H1.75A.75.75 0 011 1.75zM6 17.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
           </div>
           <div
             v-b-modal="`wp-${product.url}-${displayId}`"
@@ -121,12 +114,7 @@
               ></fa>
             </b>
             <b v-else>
-              <fa
-                :icon="['far', 'heart']"
-                title="favorite"
-                class="tw-text-red-600"
-                style="font-size:1.2em;;"
-              ></fa>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-red-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
             </b>
           </div>
           <!-- start modal -->
