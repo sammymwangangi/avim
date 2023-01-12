@@ -19,6 +19,13 @@
                 height="70"
             />
           </NuxtLink>
+          <NuxtLink class="navbar-brand d-inline" to="/">
+            <img
+                src="/mik.png"
+                alt="avimar-international-logo"
+                class="mobile-img tw-h-20 tw-w-auto"
+            />
+          </NuxtLink>
           <b-dropdown
               id="dropdown-right"
               right
@@ -162,12 +169,12 @@
             </li>
           </ul>
           <div class="tw-ml-auto tw-flex tw-items-center">
-                                <div class="tw-flex tw-flex-1 tw-items-center tw-justify-end tw-space-x-6">
-                                    <a href="#" class="tw-text-sm tw-font-medium tw-text-white">
-                                        +254731722682
-                                    </a>
-                                </div>
-                            </div>
+            <div class="tw-flex tw-flex-1 tw-items-center tw-justify-end tw-space-x-6">
+              <a href="#" class="tw-text-sm tw-font-medium tw-text-white">
+                +254731722682
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -408,7 +415,11 @@
                   aria-haspopup="true"
                   aria-expanded="false"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-gray-600"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-gray-600">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                </svg>
               </a>
               <div
                   class="dropdown-menu dropdown-menu-right"
