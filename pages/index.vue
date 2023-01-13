@@ -5,86 +5,34 @@
       <div class="tw-px-4 sm:tw-flex sm:tw-items-center sm:tw-justify-between sm:tw-px-6 lg:tw-px-8 xl:tw-px-0">
         <h2 id="category-heading" class="tw-text-2xl tw-font-bold tw-tracking-tight tw-text-gray-900">Shop by
           Category</h2>
-        <a href="#"
-           class="tw-hidden tw-text-sm tw-font-semibold tw-text-indigo-600 hover:tw-text-indigo-500 sm:tw-block">
-          Browse all categories
-          <span aria-hidden="true"> &rarr;</span>
-        </a>
       </div>
 
       <div class="tw-mt-4 tw-flow-root">
         <div class="tw--my-2">
           <div class="tw-relative tw-box-content tw-h-80 tw-overflow-x-auto tw-py-2 xl:tw-overflow-visible">
             <div
+                v-for="(group, i) in groupedCategories" :key="i"
                 class="min-w-screen-xl tw-absolute tw-flex tw-space-x-8 tw-px-4 sm:tw-px-6 lg:tw-px-8 xl:tw-relative xl:tw-grid xl:tw-grid-cols-5 xl:tw-gap-x-8 xl:tw-space-x-0 xl:tw-px-0">
-              <a href="#"
+              <a v-for="(category, index) in group" :key="index" href="#"
                  class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
                 <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-01.jpg" alt=""
+                  <img :src="
+              `${
+                category.image_url === 'undefined' || category.image_url === ''
+                  ? ''
+                  : category.image_url
+              }`
+            " :alt="`${category.name}-avimaronline`"
                        class="tw-h-full tw-w-full tw-object-cover tw-object-center">
                 </span>
                 <span aria-hidden="true"
                       class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
                 <span
-                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">New Arrivals</span>
-              </a>
-
-              <a href="#"
-                 class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
-                <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-02.jpg" alt=""
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                </span>
-                <span aria-hidden="true"
-                      class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
-                <span
-                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">Productivity</span>
-              </a>
-
-              <a href="#"
-                 class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
-                <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-04.jpg" alt=""
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                </span>
-                <span aria-hidden="true"
-                      class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
-                <span
-                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">Workspace</span>
-              </a>
-
-              <a href="#"
-                 class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
-                <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-05.jpg" alt=""
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                </span>
-                <span aria-hidden="true"
-                      class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
-                <span
-                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">Accessories</span>
-              </a>
-
-              <a href="#"
-                 class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
-                <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-03.jpg" alt=""
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                </span>
-                <span aria-hidden="true"
-                      class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
-                <span class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">Sale</span>
+                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">{{ category.name | capitalize }}</span>
               </a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="tw-mt-6 tw-px-4 sm:tw-hidden">
-        <a href="#" class="tw-block tw-text-sm tw-font-semibold tw-text-indigo-600 hover:tw-text-indigo-500">
-          Browse all categories
-          <span aria-hidden="true"> &rarr;</span>
-        </a>
       </div>
     </section>
     <!-- end brand icons-->
@@ -198,6 +146,12 @@ export default {
     LazyHydrate,
   },
 
+  props: {
+    categories: {
+      required: true,
+    },
+  },
+
   data() {
     return {
       meta: {},
@@ -206,6 +160,7 @@ export default {
         'sliders': 'sliders',
         'offers': 'offers',
       },
+      itemsPerRow: 7,
       default_limit: 13,
       limit_by: 13,
       readMore: true,
@@ -241,10 +196,24 @@ export default {
       'homeBrands',
       'homeCarousels',
     ]),
+    categories() {
+      return this.$store.state.menus.categories;
+    },
+    groupedCategories() {
+      return this.categories.reduce((accumulator, category, index) => {
+        if (index % this.itemsPerRow === 0) {
+          accumulator.push([category]);
+        } else {
+          accumulator[accumulator.length - 1].push(category);
+        }
+        return accumulator;
+      }, []);
+    },
   },
   async fetch() {
     await this.getOthers();
     await this.getMeta();
+    await this.$store.dispatch('menus/getCategories');
   },
   methods: {
     async getMeta() {

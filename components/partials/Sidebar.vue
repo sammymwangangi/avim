@@ -14,6 +14,7 @@
                   >{{ category.name | capitalize }}</a
                 >
               </li>
+
             </ul>
           </div>
         </div>
