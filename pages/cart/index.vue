@@ -35,136 +35,155 @@
           <h5>
             <strong>Cart ({{ items.length }} items)</strong>
           </h5>
-            <div class="tw-mt-12 lg:tw-grid lg:tw-grid-cols-12 lg:tw-items-start lg:tw-gap-x-12 xl:tw-gap-x-16">
-                <section aria-labelledby="cart-heading" class="lg:tw-col-span-7">
-        <h2 id="cart-heading" class="tw-sr-only">Items in your shopping cart</h2>
-        <ul role="list" class="tw-divide-y tw-divide-gray-200 tw-border-t tw-border-b tw-border-gray-200" v-for="(item, key) in items" :key="key">
+          <div class="tw-mt-12 lg:tw-grid lg:tw-grid-cols-12 lg:tw-items-start lg:tw-gap-x-12 xl:tw-gap-x-16">
+            <section aria-labelledby="cart-heading" class="lg:tw-col-span-7">
+              <h2 id="cart-heading" class="tw-sr-only">Items in your shopping cart</h2>
+              <ul v-for="(item, key) in items" :key="key"
+                  class="tw-divide-y tw-divide-gray-200 tw-border-t tw-border-b tw-border-gray-200" role="list">
 
-          <li class="tw-flex tw-py-6 sm:tw-py-10">
-            <div class="tw-flex-shrink-0">
-              <img :src="
-              `${
-                item.image_url
-              }`
-            " :alt="`${item.name}-avimar-online`" class="tw-h-24 tw-w-24 tw-rounded-md tw-object-cover tw-object-center sm:tw-h-48 sm:tw-w-48">
-            </div>
+                <li class="tw-flex tw-py-6 sm:tw-py-10">
+                  <div class="tw-flex-shrink-0">
+                    <img :alt="`${item.name}-avimar-online`"
+                         :src="
+              decodeURIComponent(`${
+                item.image_url === 'undefined' || item.image_url === ''
+                  ? ''
+                  : item.image_url
+              }`)
+            "
+                         class="tw-h-24 tw-w-24 tw-rounded-md tw-object-cover tw-object-center sm:tw-h-48 sm:tw-w-48">
+                  </div>
 
-            <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col tw-justify-between sm:tw-ml-6">
-              <div class="tw-relative tw-pr-9 sm:tw-grid sm:tw-grid-cols-2 sm:tw-gap-x-6 sm:tw-pr-0">
-                <div>
-                  <div class="tw-flex tw-justify-between">
-                    <h3 class="tw-text-sm">
-                      <nuxt-link :to="`/product/${item.url}`" class="tw-font-medium tw-text-gray-700 hover:tw-text-gray-800">{{ item.productName | capitalize }}</nuxt-link>
-                    </h3>
+                  <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col tw-justify-between sm:tw-ml-6">
+                    <div class="tw-relative tw-pr-9 sm:tw-grid sm:tw-grid-cols-2 sm:tw-gap-x-6 sm:tw-pr-0">
+                      <div>
+                        <div class="tw-flex tw-justify-between">
+                          <h3 class="tw-text-sm">
+                            <nuxt-link :to="`/product/${item.url}`"
+                                       class="tw-font-medium tw-text-gray-700 hover:tw-text-gray-800">
+                              {{ item.productName | capitalize }}
+                            </nuxt-link>
+                          </h3>
+                        </div>
+                        <div class="tw-mt-1 tw-flex tw-text-sm tw-text-gray-500">
+                          {{ item.category | capitalize }}
+                        </div>
+                        <p class="tw-mt-1 tw-text-sm tw-font-medium tw-text-gray-900">{{ item.price | currency }}</p>
+                      </div>
+
+                      <div class="tw-mt-4 sm:tw-mt-0 sm:tw-pr-9">
+                        <label class="tw-sr-only" for="quantity-2">Quantity, Product name</label>
+                        <div class="tw-flex tw-gap-1 tw-items-center tw-justify-between">
+                          <button @click="decreaseQuantity(item)" type="button" class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-red-600 tw-p-1 tw-text-white tw-shadow-sm hover:tw-bg-red-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-red-500 focus:tw-ring-offset-2">
+                            <!-- Heroicon name: mini/plus -->
+                            <svg class="tw-h-5 tw-w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"></path>
+                            </svg>
+                          </button>
+                          <input
+                            :value="`${item.productQuantity}`"
+                            aria-label="Amount (to the nearest dollar)"
+                            class="form-control text-center"
+                            disabled
+                            type="text"
+                        />
+                          <button @click="increaseQuantity(item)" type="button" class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-indigo-600 tw-p-1 tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2">
+                            <!-- Heroicon name: mini/plus -->
+                            <svg class="tw-h-5 tw-w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="tw-absolute tw-top-0 tw-right-0">
+                          <div class="tw--m-2 tw-inline-flex tw-p-2 tw-text-gray-400 hover:tw-text-gray-500 tw-cursor-pointer"
+                                  @click="removeFromCart(item)">
+                            <span class="tw-sr-only">Remove</span>
+                            <!-- Heroicon name: mini/x-mark -->
+                            <svg aria-hidden="true" class="tw-h-5 tw-w-5" fill="currentColor"
+                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="tw-mt-1 tw-flex tw-text-sm">
-                    <p class="tw-text-gray-500">White</p>
-                  </div>
-                  <p class="tw-mt-1 tw-text-sm tw-font-medium tw-text-gray-900">{{ item.price | currency }}</p>
+                </li>
+              </ul>
+            </section>
+            <section aria-labelledby="summary-heading"
+                     class="tw-mt-16 tw-rounded-lg tw-bg-gray-50 tw-px-4 tw-py-6 sm:tw-p-6 lg:tw-col-span-5 lg:tw-mt-0 lg:tw-p-8">
+              <h2 id="summary-heading" class="tw-text-lg tw-font-medium tw-text-gray-900">Order summary</h2>
+
+              <dl class="tw-mt-6 tw-space-y-4">
+                <div class="tw-flex tw-items-center tw-justify-between">
+                  <dt class="tw-text-sm tw-text-gray-600">Subtotal</dt>
+                  <dd class="tw-text-sm tw-font-medium tw-text-gray-900">{{ cartTotal | currency }}</dd>
                 </div>
-
-                <div class="tw-mt-4 sm:tw-mt-0 sm:tw-pr-9">
-                  <label for="quantity-2" class="tw-sr-only">Quantity, Product name</label>
-                  <input
-                    :value="`${item.productQuantity}`"
-                                aria-label="Amount (to the nearest dollar)"
-                                class="form-control text-center"
-                                disabled
-                                type="number"
-                            />
-
-                  <div class="tw-absolute tw-top-0 tw-right-0">
-                    <button type="button" class="tw--m-2 tw-inline-flex tw-p-2 tw-text-gray-400 hover:tw-text-gray-500" @click="removeFromCart(item)">
-                      <span class="tw-sr-only">Remove</span>
-                      <!-- Heroicon name: mini/x-mark -->
-                      <svg class="tw-h-5 tw-w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
+                  <dt class="tw-flex tw-items-center tw-text-sm tw-text-gray-600">
+                    <span>Shipping estimate</span>
+                    <a class="tw-ml-2 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500" href="#">
+                      <span class="tw-sr-only">Learn more about how shipping is calculated</span>
+                      <!-- Heroicon name: mini/question-mark-circle -->
+                      <svg aria-hidden="true" class="tw-h-5 tw-w-5" fill="currentColor"
+                           viewBox="0 0 20 20"
+                           xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
+                              fill-rule="evenodd"/>
                       </svg>
-                    </button>
-                  </div>
+                    </a>
+                  </dt>
+                  <dd class="tw-text-sm tw-font-medium tw-text-gray-900">__</dd>
                 </div>
+                <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
+                  <dt class="tw-flex tw-text-sm tw-text-gray-600">
+                    <span>Tax estimate</span>
+                    <a class="tw-ml-2 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500" href="#">
+                      <span class="tw-sr-only">Learn more about how tax is calculated</span>
+                      <!-- Heroicon name: mini/question-mark-circle -->
+                      <svg aria-hidden="true" class="tw-h-5 tw-w-5" fill="currentColor"
+                           viewBox="0 0 20 20"
+                           xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd"
+                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
+                              fill-rule="evenodd"/>
+                      </svg>
+                    </a>
+                  </dt>
+                  <dd class="tw-text-sm tw-font-medium tw-text-gray-900">__</dd>
+                </div>
+                <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
+                  <dt class="tw-text-base tw-font-medium tw-text-gray-900">Order total</dt>
+                  <dd class="tw-text-base tw-font-medium tw-text-gray-900">{{ cartTotal | currency }}</dd>
+                </div>
+              </dl>
+
+              <div class="tw-mt-6">
+                <nuxt-link
+                    class="tw-w-full tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-py-3 tw-px-4 tw-text-base tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2 focus:tw-ring-offset-gray-50"
+                    to="/checkout">Checkout
+                </nuxt-link>
               </div>
-
-              <p class="tw-mt-4 tw-flex tw-space-x-2 tw-text-sm tw-text-gray-700">
-                <!-- Heroicon name: mini/check -->
-                <svg class="tw-h-5 tw-w-5 tw-flex-shrink-0 tw-text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                <span>In stock</span>
-              </p>
-            </div>
-          </li>
-        </ul>
-      </section>
-                <section aria-labelledby="summary-heading"
-                         class="tw-mt-16 tw-rounded-lg tw-bg-gray-50 tw-px-4 tw-py-6 sm:tw-p-6 lg:tw-col-span-5 lg:tw-mt-0 lg:tw-p-8">
-                  <h2 id="summary-heading" class="tw-text-lg tw-font-medium tw-text-gray-900">Order summary</h2>
-
-                  <dl class="tw-mt-6 tw-space-y-4">
-                    <div class="tw-flex tw-items-center tw-justify-between">
-                      <dt class="tw-text-sm tw-text-gray-600">Subtotal</dt>
-                      <dd class="tw-text-sm tw-font-medium tw-text-gray-900">{{ cartTotal | currency }}</dd>
-                    </div>
-                    <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
-                      <dt class="tw-flex tw-items-center tw-text-sm tw-text-gray-600">
-                        <span>Shipping estimate</span>
-                        <a class="tw-ml-2 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500" href="#">
-                          <span class="tw-sr-only">Learn more about how shipping is calculated</span>
-                          <!-- Heroicon name: mini/question-mark-circle -->
-                          <svg aria-hidden="true" class="tw-h-5 tw-w-5" fill="currentColor"
-                               viewBox="0 0 20 20"
-                               xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd"
-                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
-                                  fill-rule="evenodd"/>
-                          </svg>
-                        </a>
-                      </dt>
-                      <dd class="tw-text-sm tw-font-medium tw-text-gray-900">__</dd>
-                    </div>
-                    <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
-                      <dt class="tw-flex tw-text-sm tw-text-gray-600">
-                        <span>Tax estimate</span>
-                        <a class="tw-ml-2 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500" href="#">
-                          <span class="tw-sr-only">Learn more about how tax is calculated</span>
-                          <!-- Heroicon name: mini/question-mark-circle -->
-                          <svg aria-hidden="true" class="tw-h-5 tw-w-5" fill="currentColor"
-                               viewBox="0 0 20 20"
-                               xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd"
-                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z"
-                                  fill-rule="evenodd"/>
-                          </svg>
-                        </a>
-                      </dt>
-                      <dd class="tw-text-sm tw-font-medium tw-text-gray-900">__</dd>
-                    </div>
-                    <div class="tw-flex tw-items-center tw-justify-between tw-border-t tw-border-gray-200 tw-pt-4">
-                      <dt class="tw-text-base tw-font-medium tw-text-gray-900">Order total</dt>
-                      <dd class="tw-text-base tw-font-medium tw-text-gray-900">{{ cartTotal | currency }}</dd>
-                    </div>
-                  </dl>
-
-                  <div class="tw-mt-6">
-                    <nuxt-link class="tw-w-full tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-py-3 tw-px-4 tw-text-base tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2 focus:tw-ring-offset-gray-50"
-                               to="/checkout">Checkout</nuxt-link>
-                  </div>
-                </section>
-            </div>
-            <!-- end row -->
+            </section>
+          </div>
+          <!-- end row -->
         </div>
         <div v-else>
           <div class="tw-text-center">
-            <div class="tw-mx-auto"><img src="/images/empty_cart.svg" alt="empty cart illustration"></div>
-    <h3 class="tw-mt-2 tw-text-sm tw-font-medium tw-text-gray-900">Cart is empty</h3>
-    <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Looks like you have no items in your shopping cart.</p>
-    <div class="tw-mt-6">
-      <nuxt-link class="tw-inline-flex tw-items-center tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
-                 to="/">
-        Continue Shopping
-      </nuxt-link>
-    </div>
-  </div>
+            <div class="tw-mx-auto"><img alt="empty cart illustration" src="/images/empty_cart.svg"></div>
+            <h3 class="tw-mt-2 tw-text-sm tw-font-medium tw-text-gray-900">Cart is empty</h3>
+            <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Looks like you have no items in your shopping cart.</p>
+            <div class="tw-mt-6">
+              <nuxt-link
+                  class="tw-inline-flex tw-items-center tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+                  to="/">
+                Continue Shopping
+              </nuxt-link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
