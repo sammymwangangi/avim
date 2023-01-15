@@ -146,13 +146,6 @@ export default {
     Products,
     LazyHydrate,
   },
-
-  props: {
-    categories: {
-      required: true,
-    },
-  },
-
   data() {
     return {
       meta: {},

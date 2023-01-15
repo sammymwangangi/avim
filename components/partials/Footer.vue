@@ -9,7 +9,7 @@
               <h3 class="tw-text-base tw-font-medium tw-text-white">Get In Touch</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
                 <div v-for="item in get_in_touch">
-                  <a href="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ item.name }}</a>
+                  <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ item.name }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -17,7 +17,7 @@
               <h3 class="tw-text-base tw-font-medium tw-text-white">Account</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
                 <div v-for="account in accounts">
-                  <a href="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ account.name }}</a>
+                  <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ account.name }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
               <h3 class="tw-text-base tw-font-medium tw-text-white">Connect</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
                 <div v-for="connection in connections">
-                  <a href="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ connection.name }}</a>
+                  <NuxtLink :to="`${connection.href}`" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ connection.name }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4" v-for="(group, i) in groupedCategories"
                   :key="i">
                 <div v-for="(category, index) in group" :key="index">
-                  <a href="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ category.name | capitalize }}</a>
+                  <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ category.name | capitalize }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default {
           { name: "Location: Allsops,Ruaraka-Nairobi", href: "#" },
         ],
         companies: [
-          { name: "Who we are", href: "#" },
+          { name: "Who we are", href: "/about-us" },
           { name: "Careers", href: "#" },
           { name: "Terms & Conditions", href: "#" },
           { name: "Privacy", href: "#" },
@@ -120,7 +120,7 @@ export default {
           { name: "Redeem a Gift Card", href: "#" },
         ],
         connections: [
-          { name: "Who we are", href: "/about" },
+          { name: "Who we are", href: "/about-us" },
           { name: "Twitter", href: "#" },
           { name: "Instagram", href: "#" },
           { name: "Pinterest", href: "#" },
