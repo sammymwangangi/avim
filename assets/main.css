@@ -7,7 +7,7 @@
     @apply tw-font-poppins
   }
   body {
-    @apply tw-m-0
+    @apply tw-m-0 tw-font-poppins
   }
 }
 
