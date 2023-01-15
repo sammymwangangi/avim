@@ -13,7 +13,7 @@
             <div
                 v-for="(group, i) in groupedCategories" :key="i"
                 class="min-w-screen-xl tw-absolute tw-flex tw-space-x-8 tw-px-4 sm:tw-px-6 lg:tw-px-8 xl:tw-relative xl:tw-grid xl:tw-grid-cols-5 xl:tw-gap-x-8 xl:tw-space-x-0 xl:tw-px-0">
-              <a v-for="(category, index) in group" :key="index" href="#"
+              <a v-for="(category, index) in group" :key="index" :href="`/${category.url}`"
                  class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
                 <span aria-hidden="true" class="tw-absolute tw-inset-0">
                   <img :src="
