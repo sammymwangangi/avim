@@ -43,15 +43,7 @@
 
                 <li class="tw-flex tw-py-6 sm:tw-py-10">
                   <div class="tw-flex-shrink-0">
-                    <img :alt="`${item.name}-avimar-online`"
-                         :src="
-              decodeURIComponent(`${
-                item.image_url === 'undefined' || item.image_url === ''
-                  ? ''
-                  : item.image_url
-              }`)
-            "
-                         class="tw-h-24 tw-w-24 tw-rounded-md tw-object-cover tw-object-center sm:tw-h-48 sm:tw-w-48">
+                     {{ item.productName | capitalize }}
                   </div>
 
                   <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col tw-justify-between sm:tw-ml-6">
@@ -59,16 +51,12 @@
                       <div>
                         <div class="tw-flex tw-justify-between">
                           <h3 class="tw-text-sm">
-                            <nuxt-link :to="`/product/${item.url}`"
+                            <span
                                        class="tw-font-medium tw-text-gray-700 hover:tw-text-gray-800">
-                              {{ item.productName | capitalize }}
-                            </nuxt-link>
+                              {{ item.price | currency }}
+                            </span>
                           </h3>
                         </div>
-                        <div class="tw-mt-1 tw-flex tw-text-sm tw-text-gray-500">
-                          {{ item.category | capitalize }}
-                        </div>
-                        <p class="tw-mt-1 tw-text-sm tw-font-medium tw-text-gray-900">{{ item.price | currency }}</p>
                       </div>
 
                       <div class="tw-mt-4 sm:tw-mt-0 sm:tw-pr-9">
