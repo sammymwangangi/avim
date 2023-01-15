@@ -84,8 +84,9 @@
 
         <div class="tw-space-y-6 lg:tw-grid lg:tw-grid-cols-3 lg:tw-gap-x-8 lg:tw-space-y-0">
           <a
-              v-for="collection in collections"
-            :href="collection.href"
+            v-for="(collection, key) in collections"
+            :key="key"
+            :href="`/${collection.href}`"
             class="tw-group tw-block"
         >
           <div
@@ -108,7 +109,7 @@
 
     <div class="tw-container tw-mx-auto tw-px-4">
       <section
-          class="tw-border-0 tw-my-2 tw-px-2 tw-py-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
+          class="tw-border-0 tw-my-2 tw-bg-white tw-shadow-lg tw-rounded tw-mx-auto tw-max-w-xl tw-px-4 tw-py-6 sm:tw-px-6 lg:tw-max-w-7xl lg:tw-px-8">
         <NuxtLink to="/" class="tw-text-3xl tw-font-medium tw-tracking-tight tw-text-blue-600" >Avimar
           International
         </NuxtLink>
