@@ -124,7 +124,7 @@
                   aria-expanded="false"
               >
                 <span
-                    class="tw-text-sm tw-font-medium tw-text-white"
+                    class="tw-text-sm tw-font-medium tw-text-white tw-capitalize"
                 >{{ brand.name }}</span
                 >
               </NuxtLink>
