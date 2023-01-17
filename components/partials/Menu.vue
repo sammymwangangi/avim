@@ -124,15 +124,12 @@
                   aria-expanded="false"
               >
                 <span
-                    class="
-                    tw-capitalize tw-text-sm tw-font-semibold
-                    hover:tw-text-red-600
-                  "
+                    class="tw-text-sm tw-font-medium tw-text-white"
                 >{{ brand.name }}</span
                 >
               </NuxtLink>
               <ul
-                  class="dropdown-menu tw-w-full tw-bg-black tw-border-0 tw-rounded-b-lg tw-mt-0 tw-pb-2"
+                  class="dropdown-menu tw-bg-white tw-mx-auto tw-max-w-7xl tw-px-8"
                   v-bind:aria-labelledby="key"
               >
                 <li
@@ -162,7 +159,7 @@
             <li class="nav-item">
               <NuxtLink
                   to="/blog"
-                  class="tw-capitalize tw-no-underline tw-text-sm tw-font-semibold tw-text-white hover:tw-text-red-600"
+                  class="tw-text-sm tw-font-medium tw-text-white"
               >Blog
               </NuxtLink
               >
