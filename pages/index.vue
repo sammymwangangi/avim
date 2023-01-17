@@ -8,7 +8,7 @@
       </div>
 
       <div class="tw-mt-4 tw-flow-root">
-        <div class="tw--my-2">
+        <div class="tw-my-2">
           <div class="tw-relative tw-box-content tw-h-80 tw-overflow-x-auto tw-py-2 xl:tw-overflow-visible">
             <div
                 v-for="(group, i) in groupedCategories" :key="i"
@@ -23,7 +23,7 @@
                   : category.image_url
               }`
             " :alt="`${category.name}-avimaronline`"
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center">
+                       class="tw-h-full tw-w-full tw-object-cover tw-object-center" />
                 </span>
                 <span aria-hidden="true"
                       class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>

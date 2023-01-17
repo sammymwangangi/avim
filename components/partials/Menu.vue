@@ -659,24 +659,13 @@ nav#navbarNav {
 }
 
 .dropdown-menu {
-  margin-top: 0;
-  padding-top: 1px;
-  text-transform: capitalize;
-  background: #000000;
-  color: #ffffff;
-  border-radius: 0;
-  height: auto;
-  max-height: 450px;
+  background: #ffffff;
+  color: #1e1e1e;
   overflow-x: hidden;
 }
 
 .dropdown-menu:hover {
-  margin-top: 0;
-  padding-top: 1px;
   text-transform: capitalize;
-  background: #000000;
-  color: #277fbe;
-  border-radius: 0;
 }
 
 .dropdown:hover > .dropdown-menu {
@@ -691,11 +680,6 @@ nav#navbarNav {
     font-size: 0.9em;
     z-index: 9999;
     padding-right: 20px;
-  }
-
-  .dropdown-menu {
-    padding: 0;
-    width: auto;
   }
 
   .scrollable-menu {
@@ -715,14 +699,6 @@ nav#navbarNav {
     padding-right: 5px;
   }
 
-  .dropdown-menu {
-    font-size: 0.8em;
-    width: auto;
-  }
-
-  .dropdown-item {
-    margin-left: -20px;
-  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {

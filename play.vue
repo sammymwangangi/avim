@@ -36,13 +36,6 @@
 
                 <!--
                   'Women' flyout menu, show/hide based on flyout menu state.
-
-                  Entering: "tw-transition tw-ease-out tw-duration-200"
-                    From: "tw-opacity-0"
-                    To: "tw-opacity-100"
-                  Leaving: "tw-transition tw-ease-in tw-duration-150"
-                    From: "tw-opacity-100"
-                    To: "tw-opacity-0"
                 -->
                 <div class="tw-absolute tw-inset-x-0 tw-top-full tw-text-sm tw-text-gray-500">
                   <!-- Presentational element used to render the bottom tw-shadow, if we put the tw-shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the tw-shadow -->
