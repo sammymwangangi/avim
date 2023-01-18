@@ -19,7 +19,7 @@
                 height="70"
             />
           </NuxtLink>
-          <NuxtLink class="navbar-brand d-inline" to="/">
+          <NuxtLink class="navbar-brand d-inline" to="/countries/Kenya">
             <img
                 src="/mik.png"
                 alt="avimar-international-logo"
@@ -192,7 +192,7 @@
                 height="70"
             />
           </NuxtLink>
-          <NuxtLink class="navbar-brand d-inline" to="/">
+          <NuxtLink class="navbar-brand d-inline" to="/countries/Kenya">
             <img
                 src="/mik.png"
                 alt="avimar-international-logo"
