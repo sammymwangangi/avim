@@ -9,29 +9,7 @@
 
       <div class="tw-mt-4 tw-flow-root">
         <div class="tw-my-2">
-          <div class="tw-relative tw-box-content tw-h-80 tw-overflow-x-auto tw-py-2 xl:tw-overflow-visible">
-            <div
-                v-for="(group, i) in groupedCategories" :key="i"
-                class="min-w-screen-xl tw-absolute tw-flex tw-space-x-8 tw-px-4 sm:tw-px-6 lg:tw-px-8 xl:tw-relative xl:tw-grid xl:tw-grid-cols-5 xl:tw-gap-x-8 xl:tw-space-x-0 xl:tw-px-0">
-              <a v-for="(category, index) in group" :key="index" :href="`/${category.url}`"
-                 class="tw-relative tw-flex tw-h-80 tw-w-56 tw-flex-col tw-overflow-hidden tw-rounded-lg tw-p-6 hover:tw-opacity-75 xl:tw-w-auto">
-                <span aria-hidden="true" class="tw-absolute tw-inset-0">
-                  <img :src="
-              `${
-                category.image_url === 'undefined' || category.image_url === ''
-                  ? ''
-                  : category.image_url
-              }`
-            " :alt="`${category.name}-avimaronline`"
-                       class="tw-h-full tw-w-full tw-object-cover tw-object-center" />
-                </span>
-                <span aria-hidden="true"
-                      class="tw-absolute tw-inset-x-0 tw-bottom-0 tw-h-2/3 tw-bg-gradient-to-t tw-from-gray-800 tw-opacity-50"></span>
-                <span
-                    class="tw-relative tw-mt-auto tw-text-center tw-text-xl tw-font-bold tw-text-white">{{ category.name | capitalize }}</span>
-              </a>
-            </div>
-          </div>
+          <Categories />
         </div>
       </div>
     </section>
@@ -138,6 +116,7 @@ import {mapState} from 'vuex';
 
 const Carousel = () => import('~/components/Carousel');
 const Products = () => import('~/components/HomeProducts');
+import Categories from "~/components/Categories.vue";
 
 export default {
   mixins: [vueWindowSizeMixin],
@@ -145,6 +124,7 @@ export default {
     Carousel,
     Products,
     LazyHydrate,
+    Categories
   },
   data() {
     return {
