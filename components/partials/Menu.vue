@@ -129,7 +129,7 @@
                 >
               </NuxtLink>
               <ul
-                  class="dropdown-menu tw-bg-white tw-mx-auto tw-max-w-7xl tw-px-8"
+                  class="dropdown-menu tw-bg-[#277FBE] tw-mx-auto tw-max-w-7xl tw-px-8"
                   v-bind:aria-labelledby="key"
               >
                 <li
