@@ -8,7 +8,7 @@
             <div>
               <h3 class="tw-text-base tw-font-medium tw-text-white">Get In Touch</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
-                <div v-for="item in get_in_touch">
+                <div v-for="item in get_in_touch" :key="item">
                   <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ item.name }}</NuxtLink>
                 </div>
               </div>
@@ -16,7 +16,7 @@
             <div class="tw-mt-12 md:tw-mt-0">
               <h3 class="tw-text-base tw-font-medium tw-text-white">Account</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
-                <div v-for="account in accounts">
+                <div v-for="account in accounts" :key="account">
                   <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ account.name }}</NuxtLink>
                 </div>
               </div>
@@ -26,7 +26,7 @@
             <div>
               <h3 class="tw-text-base tw-font-medium tw-text-white">Connect</h3>
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4">
-                <div v-for="connection in connections">
+                <div v-for="connection in connections" :key="connection">
                   <NuxtLink :to="`${connection.href}`" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ connection.name }}</NuxtLink>
                 </div>
               </div>
@@ -36,7 +36,7 @@
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4" v-for="(group, i) in groupedCategories"
                   :key="i">
                 <div v-for="(category, index) in group" :key="index">
-                  <NuxtLink to="#" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ category.name | capitalize }}</NuxtLink>
+                  <NuxtLink :to="`/${category.url}`" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ category.name | capitalize }}</NuxtLink>
                 </div>
               </div>
             </div>

@@ -222,12 +222,13 @@
             ></path>
           </svg>
           <small
-              class="badge badge-dark rounded-circle p-2 tw-text-xs tw-relative"
+              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-indigo-600 tw-p-1 tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-[#277fbe] focus:tw-ring-offset-2 tw-relative"
               style="top: -10px;"
           >
             <span v-if="cart.length > 0">{{ cart.length }}</span>
             <span v-else>0</span>
           </small></NuxtLink
+          
         >
         <NuxtLink
             to="/favorite"
@@ -354,13 +355,12 @@
                       d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                   ></path>
                 </svg>
-                <small
-                    class="badge badge-dark rounded-circle p-2"
-                    style="font-size: 0.6em; position:relative;top: -10px;"
+                <div
+                    class="tw-inline-flex tw-items-center tw-px-2 tw-py-2 tw-rounded-full tw-border tw-border-transparent tw-bg-indigo-600 tw-w-5 tw-h-5 tw-text-white tw-text-sm tw-shadow-xs hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-[#277fbe] focus:tw-ring-offset-2 tw-relative tw-bottom-2 tw-right-2"
                 >
-                  <span v-if="cart.length > 0">{{ cart.length }}</span>
-                  <span v-else>0</span>
-                </small></NuxtLink
+                  <div v-if="cart.length > 0">{{ cart.length }}</div>
+                  <div v-else>0</div>
+                </div>Cart</NuxtLink
               >
             </li>
             <li class="nav-item">
@@ -400,6 +400,7 @@
                     ></path>
                   </svg>
                 </b>
+                Wishlist
               </NuxtLink>
             </li>
             <li class="nav-item dropdown">
@@ -417,6 +418,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round"
                         d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                 </svg>
+                <span>Account</span>
               </a>
               <div
                   class="dropdown-menu dropdown-menu-right"
