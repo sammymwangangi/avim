@@ -139,7 +139,7 @@
                 >
                   <NuxtLink
                       :to="`/${brand.url}/${cat.name}`"
-                      class="dropdown-item scrollable-menu text-capitalize dropdown-toggle hover:tw-text-red-600"
+                      class="dropdown-item scrollable-menu text-capitalize dropdown-toggle hover:tw-text-white"
                       v-bind:id="cat.name"
                       role="button"
                       data-toggle="dropdown"
@@ -642,7 +642,7 @@ nav#navbarNav {
 }
 
 .dropdown-toggle :hover {
-  color: #277fbe;
+  color: #ffffff;
   background: transparent;
 }
 
@@ -664,6 +664,7 @@ nav#navbarNav {
   background: #ffffff;
   color: #1e1e1e;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .dropdown-menu:hover {
@@ -672,6 +673,7 @@ nav#navbarNav {
 
 .dropdown:hover > .dropdown-menu {
   display: table-column;
+  width: 100%;
 }
 
 @media screen and (min-width: 992px) {
