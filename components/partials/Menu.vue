@@ -13,10 +13,8 @@
           <NuxtLink to="/">
             <img
                 :src="`/logo.png`"
-                class="mobile-img text-decoration-none"
+                class="mobile-img text-decoration-none tw-h-20 tw-w-auto"
                 alt="avimar-international-logo"
-                width="70"
-                height="70"
             />
           </NuxtLink>
           <NuxtLink class="navbar-brand d-inline" to="/countries/Kenya">
@@ -47,6 +45,7 @@
               <b-dropdown-item
                   :href="`/account/dashboard`"
                   style="font-size: 1.1em;"
+                  class="tw-text-gray-700"
               >
                 <fa icon="tachometer-alt"></fa>
                 Dashboard
@@ -71,6 +70,7 @@
               <b-dropdown-item
                   :href="`/account/login`"
                   style="font-size: 1.1em;"
+                  class="tw-text-gray-700"
               >
                 <fa icon="sign-in-alt" title="Login"></fa>
                 >

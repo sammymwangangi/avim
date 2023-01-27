@@ -21,20 +21,20 @@
         <div class="">
           <nuxt-link
             to="/blog"
-            class="tw-capitalize tw-no-underline tw-text-xl tw-font-medium tw-text-gray-700 hover:tw-text-red-600 mx-3"
+            class="tw-capitalize tw-no-underline tw-text-xl tw-font-medium tw-text-gray-700 mx-3"
             >Blog</nuxt-link
           >
         </div>
       </template>
     </div>
     <template>
-      <div class="text-center" style="position:fixed;bottom: 16%;left: 22%;">
+      <!-- <div class="text-center" style="position:fixed;bottom: 16%;left: 22%;">
         <img
           src="/till.jpg"
           style="cursor:pointer;border-radius: 5px; width: 168px;height:48px;"
           alt="Till Number"
         />
-      </div>
+      </div> -->
 
       <div class="text-center pl-4" style="position:fixed;bottom: 8%;">
         <a
