@@ -360,7 +360,7 @@
                 >
                   <div v-if="cart.length > 0">{{ cart.length }}</div>
                   <div v-else>0</div>
-                </div>Cart</NuxtLink
+                </div><span class="tw-text-gray-600">Cart</span></NuxtLink
               >
             </li>
             <li class="nav-item">
@@ -400,12 +400,12 @@
                     ></path>
                   </svg>
                 </b>
-                Wishlist
+                <span class="tw-text-gray-600">Wishlist</span>
               </NuxtLink>
             </li>
             <li class="nav-item dropdown">
               <a
-                  class="nav-link dropdown-toggle tw-text-red-600"
+                  class="nav-link dropdown-toggle tw-text-gray-600"
                   href="#"
                   id="navbarDropdown"
                   role="button"
@@ -418,7 +418,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round"
                         d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                 </svg>
-                <span>Account</span>
+                <span class="tw-text-gray-600">Account</span>
               </a>
               <div
                   class="dropdown-menu dropdown-menu-right"
@@ -441,7 +441,7 @@
                 >
               </div>
               <div
-                  class="dropdown-menu dropdown-menu-right tw-absolute tw-z-40 tw-bg-red-600"
+                  class="dropdown-menu dropdown-menu-right tw-absolute tw-z-40 tw-bg-[#277FBE]"
                   aria-labelledby="navbarDropdown"
                   v-else
               >
@@ -451,6 +451,10 @@
                 >
                 <NuxtLink to="/account/register" class="dropdown-item"
                 >Register
+                </NuxtLink
+                >
+                <NuxtLink to="/account/register" class="dropdown-item"
+                >Sell
                 </NuxtLink
                 >
               </div>
@@ -473,7 +477,7 @@
             :value="query"
             @input="(e) => (query = e.target.value)"
             autocomplete="off"
-            class="form-control tw-rounded-b-lg tw-mt-2 focus:tw-ring-1 focus:tw-ring-gray-400"
+            class="form-control tw-rounded-b-lg tw-mt-8 focus:tw-ring-1 focus:tw-ring-gray-400"
             placeholder="Search products ...."
         />
       </form>
