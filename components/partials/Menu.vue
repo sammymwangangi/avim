@@ -110,7 +110,7 @@
               </NuxtLink>
             </li>
             <li
-                class="nav-item dropdown"
+                class="nav-item dropdown position-static"
                 v-for="(brand, key) in navs"
                 :key="key"
             >
@@ -129,9 +129,10 @@
                 >
               </NuxtLink>
               <ul
-                  class="dropdown-menu tw-bg-[#277FBE] tw-mx-auto tw-max-w-7xl tw-px-8"
+                  class="dropdown-menu tw-bg-[#277FBE] w-100"
                   v-bind:aria-labelledby="key"
               >
+              <div class="container-fluid">
                 <li
                     class="nav-item scrollable-menu dropdown"
                     v-for="cat in brand.subcategories"
@@ -154,6 +155,7 @@
                     >
                   </NuxtLink>
                 </li>
+              </div>
               </ul>
             </li>
             <li class="nav-item">
@@ -177,7 +179,7 @@
     </nav>
     <!-- Top Nav Bar -->
     <nav
-        class="clearfix navbar navbar-expand-lg fixed-top navbar-dark tw-shadow-lg"
+        class="navbar navbar-expand-lg fixed-top navbar-dark tw-shadow-lg"
         style="height: 6rem"
         id="main-nav"
     >
@@ -187,9 +189,7 @@
             <img
                 src="/logo.png"
                 alt="avimar-international-logo"
-                class="mobile-img"
-                width="70"
-                height="70"
+                class="mobile-img tw-h-20 tw-w-auto"
             />
           </NuxtLink>
           <NuxtLink class="navbar-brand d-inline" to="/countries/Kenya">
@@ -653,6 +653,7 @@ nav#navbarNav {
 .dropdown-item {
   font-weight: 400;
   color: #ffffff;
+  width: max-content !important;
 }
 
 .dropdown-item:hover {
@@ -663,8 +664,6 @@ nav#navbarNav {
 .dropdown-menu {
   background: #ffffff;
   color: #1e1e1e;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 .dropdown-menu:hover {
@@ -672,8 +671,7 @@ nav#navbarNav {
 }
 
 .dropdown:hover > .dropdown-menu {
-  display: table-column;
-  width: 100%;
+  display: block;
 }
 
 @media screen and (min-width: 992px) {

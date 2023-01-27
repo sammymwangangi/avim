@@ -39,8 +39,8 @@
                   <!-- Presentational element used to render the bottom tw-shadow, if we put the tw-shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the tw-shadow -->
                   <!-- <div class="tw-absolute tw-inset-0 tw-top-1/2 tw-bg-white tw-shadow" aria-hidden="true"></div> -->
 
-                  <div class="dropdown-menu tw-relative tw-bg-white">
-                    <div class="tw-mx-auto tw-max-w-7xl tw-px-8">
+                  <div class="dropdown-menu tw-relative tw-bg-white w-100" v-bind:aria-labelledby="key">
+                    <div class="tw-mx-auto tw-max-w-7xl tw-px-8 container-fluid">
                       <div class="tw-grid tw-grid-cols-2 tw-gap-y-10 tw-gap-x-8 tw-py-16">
                         <div class="tw-col-start-2 tw-grid tw-grid-cols-2 tw-gap-x-8">
                           <div class="group tw-relative tw-text-base sm:tw-text-sm">
@@ -62,7 +62,7 @@
                             class="tw-mt-6 tw-space-y-6 sm:tw-mt-4 sm:tw-space-y-4"
                             v-bind:aria-labelledby="key">
                               <li 
-                              class="tw-flex"
+                              class="tw-flex nav-item scrollable-menu dropdown"
                               v-for="cat in brand.subcategories" 
                               :key="cat.name">
                                 <nuxt-link  
