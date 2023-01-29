@@ -1,7 +1,7 @@
 <template>
   <div id="someshit">
     <!-- brand icons-->
-    <section aria-labelledby="category-heading" class="tw-pt-32 md:tw-pt-24 xl:tw-mx-auto xl:tw-max-w-7xl xl:tw-px-8">
+    <section aria-labelledby="category-heading" class="tw-pt-40 md:tw-pt-32 xl:tw-mx-auto xl:tw-max-w-7xl xl:tw-px-8">
       <div class="tw-px-4 sm:tw-flex sm:tw-items-center sm:tw-justify-between sm:tw-px-6 lg:tw-px-8 xl:tw-px-0">
         <h2 id="category-heading" class="tw-text-2xl tw-font-bold tw-tracking-tight tw-text-gray-900">Shop by
           Category</h2>

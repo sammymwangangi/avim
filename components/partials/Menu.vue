@@ -124,37 +124,53 @@
                   aria-expanded="false"
               >
                 <span
-                    class="tw-text-sm tw-font-medium tw-text-white tw-capitalize"
+                    class="tw-text-sm tw-font-medium tw-text-white tw-capitalize md:tw-h-auto"
                 >{{ brand.name }}</span
                 >
               </NuxtLink>
               <ul
-                  class="dropdown-menu tw-bg-[#277FBE] w-100"
+                  class="dropdown-menu tw-bg-white w-100 md:tw-rounded-none -tw-mt-3 tw-border-t-0 tw-border-transparent"
                   v-bind:aria-labelledby="key"
               >
               <div class="container-fluid">
-                <li
-                    class="nav-item scrollable-menu dropdown"
-                    v-for="cat in brand.subcategories"
-                    :key="cat.name"
-                >
-                  <NuxtLink
-                      :to="`/${brand.url}/${cat.name}`"
-                      class="dropdown-item scrollable-menu text-capitalize dropdown-toggle hover:tw-text-white"
-                      v-bind:id="cat.name"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                  >
-                    <span
-                        class="
-                        tw-capitalize tw-text-sm tw-font-semibold
-                      "
-                    >{{ cat.name.replace(/-/g, ' ') }}</span
+                <div class="tw-grid tw-grid-cols-2 tw-gap-y-4 tw-gap-x-6 tw-py-16 tw-mx-auto">
+                  <div class="tw-col-start-2 tw-grid tw-grid-cols-2 tw-gap-x-8">
+                    <div class="tw-group tw-relative tw-justify-end tw-text-base sm:tw-text-sm">
+                      <div class="tw-aspect-w-1 tw-aspect-h-1 tw-overflow-hidden tw-rounded-lg tw-bg-gray-100 group-hover:tw-opacity-75">
+                        <img :src="`https://ik.imagekit.io/qqkp8wchu/${brand.photo}`" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="tw-object-cover tw-object-center">
+                      </div>
+                      <NuxtLink :to="`/${brand.url}`" class="tw-mt-6 tw-block tw-font-medium tw-text-gray-900 tw-capitalize">
+                        <span class="tw-absolute tw-inset-0 tw-z-10" aria-hidden="true"></span>
+                        {{ brand.name }}
+                      </NuxtLink>
+                      <p aria-hidden="true" class="tw-mt-1">Shop now</p>
+                    </div>
+                  </div>
+                  <div class="tw-row-start-1 tw-grid tw-grid-cols-3 tw-gap-y-4 tw-gap-x-8 tw-text-sm">
+                    <div class="nav-item scrollable-menu dropdown"
+                        v-for="cat in brand.subcategories"
+                        :key="cat.name"
                     >
-                  </NuxtLink>
-                </li>
+                      <NuxtLink
+                          :to="`/${brand.url}/${cat.name}`"
+                          class="dropdown-item scrollable-menu tw-flex text-capitalize dropdown-toggle tw-text-gray-700 hover:tw-text-gray-800"
+                          v-bind:id="cat.name"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                      >
+                        <span
+                            class="
+                            tw-capitalize tw-text-sm tw-font-semibold
+                          "
+                        >{{ cat.name.replace(/-/g, ' ') }}</span
+                        >
+                      </NuxtLink>
+                    </div>
+                  </div>
+                  
+                </div>
               </div>
               </ul>
             </li>
@@ -179,8 +195,7 @@
     </nav>
     <!-- Top Nav Bar -->
     <nav
-        class="navbar navbar-expand-lg fixed-top navbar-dark tw-shadow-lg"
-        style="height: 6rem"
+        class="navbar navbar-expand-lg fixed-top navbar-dark tw-shadow-lg md:tw-h-24"
         id="main-nav"
     >
       <div class="container-fluid">
@@ -477,7 +492,7 @@
             :value="query"
             @input="(e) => (query = e.target.value)"
             autocomplete="off"
-            class="form-control tw-rounded-b-lg tw-mt-8 focus:tw-ring-1 focus:tw-ring-gray-400"
+            class="form-control tw-rounded-b-lg tw-mt-12 focus:tw-ring-1 focus:tw-ring-gray-400"
             placeholder="Search products ...."
         />
       </form>
@@ -636,7 +651,7 @@ i.heart {
 
 nav#main-nav {
   background: white;
-  height: 70px;
+  /* height: 70px; */
   border-top: 5px solid #277fbe;
 }
 
@@ -646,7 +661,7 @@ nav#navbarNav {
 }
 
 .dropdown-toggle :hover {
-  color: #ffffff;
+  /* color: #000000; */
   background: transparent;
 }
 
@@ -656,7 +671,7 @@ nav#navbarNav {
 
 .dropdown-item {
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   width: max-content !important;
 }
 
@@ -681,7 +696,6 @@ nav#navbarNav {
 @media screen and (min-width: 992px) {
   #navbarNav .nav-item .nav-link {
     text-transform: uppercase;
-    color: #ffffff;
     font-weight: 500;
     font-size: 0.9em;
     z-index: 9999;
@@ -698,7 +712,6 @@ nav#navbarNav {
 @media (min-width: 768px) and (max-width: 991px) {
   #navbarNav .nav-item .nav-link {
     text-transform: uppercase;
-    color: #ffffff;
     font-weight: 500;
     font-size: 0.7em;
     z-index: 9999;
