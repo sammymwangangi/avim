@@ -101,7 +101,7 @@
 
           The platform provides a wide range of products covering Furniture, Metalwork Products like
           wheelbarrows, home appliances, smartphones and accessories, spare parts , electronic products
-          such as computers, tw-tablets, and TVs, beauty and fashion products, among others
+          such as computers, tablets, and TVs, beauty and fashion products, among others
 
         </div>
       </section>
