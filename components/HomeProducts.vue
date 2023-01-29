@@ -14,7 +14,7 @@
         >
           <div
             v-if="product.label.includes('on-offer')"
-            class="ribbon tw-absolute tw-top-0 tw-left-0 tw-bg-red-600 tw-text-white tw-font-medium tw-text-xs tw-text-center tw-uppercase tw-p-1 tw-shadow-md tw-shadow-red-600/30 tw-whitespace-no-wrap"
+            class="ribbon tw-absolute tw-top-0 tw-left-0 tw-bg-[#277fbe] tw-text-white tw-font-medium tw-text-xs tw-text-center tw-uppercase tw-p-1 tw-shadow-md tw-shadow-[#277fbe]/30 tw-whitespace-no-wrap"
           >
             Offer
           </div>
@@ -76,32 +76,30 @@
           </button>
         </div>
         <div
-          class="tw-flex tw-justify-around tw-px-2 tw-py-2"
+          class="tw-flex tw-space-x-4 tw-px-2 tw-py-2"
           style="font-family: 'Roboto', sans-serif;margin-top: 5px;"
         >
+        <div class="tw-flex-auto tw-flex tw-space-x-4">
+          <div
+              v-b-modal="`${product.url}-${displayId}`"
+              @click="productInfo(product)"
+              :disabled="product.available === false"
+              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+            >
+            Buy now
+          </div>
           <div
             v-b-modal="`${product.url}-${displayId}`"
             @click="productInfo(product)"
             :disabled="product.available === false"
-            class="tw-self-end"
+            class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-px-3 tw-py-1.5 tw-text-xs tw-font-medium tw-text-gray-800 hover:tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6"><path d="M1 1.75A.75.75 0 011.75 1h1.628a1.75 1.75 0 011.734 1.51L5.18 3a65.25 65.25 0 0113.36 1.412.75.75 0 01.58.875 48.645 48.645 0 01-1.618 6.2.75.75 0 01-.712.513H6a2.503 2.503 0 00-2.292 1.5H17.25a.75.75 0 010 1.5H2.76a.75.75 0 01-.748-.807 4.002 4.002 0 012.716-3.486L3.626 2.716a.25.25 0 00-.248-.216H1.75A.75.75 0 011 1.75zM6 17.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15.5 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            Add to cart
           </div>
-          <div
-            v-b-modal="`wp-${product.url}-${displayId}`"
-            @click="whatsAppInfo(product)"
-            :disabled="product.available === false"
-            class="tw-self-end"
-          >
-            <fa
-              :icon="['fab', 'whatsapp']"
-              title="WhatsApp Order"
-              style="font-size:1.2em; color:#28AB81;"
-            ></fa>
-          </div>
+        </div>
 
           <div
-            class="tw-self-end"
+            class="tw-flex-none tw-flex tw-items-center tw-justify-center tw-w-9 tw-h-9 tw-rounded-full tw-bg-red-50"
             @click="wishList(product)"
             style="cursor: pointer"
           >
@@ -127,13 +125,13 @@
           ></AddToCart>
           <!-- end modal -->
           <!-- start whatsApp modal -->
-          <WhatsAppOrder
+          <!-- <WhatsAppOrder
             :product="product"
             :active-product="activeProduct"
             :selected-quantity="selectedQuantity"
             :price="price"
             :display-id="displayId"
-          ></WhatsAppOrder>
+          ></WhatsAppOrder> -->
           <!-- end whatsApp modal -->
         </div>
       </div>
@@ -193,6 +191,33 @@ export default {
       } else {
         this.$store.commit('favorite/addToFavorite', product);
         this.$toast.success('Added to favorites');
+      }
+    },
+    addToCart() {
+      this.item = {
+        productName: this.activeProduct.name,
+        productImage: this.activeProduct.image,
+        productImageUrl: this.product.image_url,
+        productId: this.activeProduct._id,
+        productQuantity: this.quantity,
+        productUnit: this.price.quantity,
+        productType: this.activeProduct.category,
+        price: this.price.discount,
+        subTotal: this.price.discount * this.quantity,
+      };
+      let found = this.cart.find(
+        (product) => product.productId === this.item.productId
+      );
+      if (found) {
+        this.$toast.info('Item already in cart');
+        this.$bvModal.hide(`${this.activeProduct.url}`);
+      } else if (this.item.productQuantity < 1) {
+        this.$toast.warning('Quantity must be equal or greater than 1');
+        this.$bvModal.hide(`${this.activeProduct.url}`);
+      } else {
+        this.$store.commit('cart/addToCart', this.item);
+        this.$bvModal.hide(`${this.activeProduct.url}`);
+        this.$toast.success('Added to cart');
       }
     },
   },

@@ -4,7 +4,6 @@
     <nuxt></nuxt>
     <call-button></call-button>
     <whats-app></whats-app>
-    <blogger></blogger>
     <Footer />
   </div>
 </template>

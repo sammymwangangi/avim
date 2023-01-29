@@ -96,7 +96,14 @@
           </div>
 
 
-
+          <div class="tw-flex-auto tw-flex tw-space-x-4">
+            <button class="tw-h-10 tw-px-6 tw-font-semibold tw-rounded-full bg-violet-600 tw-text-white" type="submit">
+              Buy now
+            </button>
+            <button class="tw-h-10 tw-px-6 tw-font-semibold tw-rounded-full tw-border tw-border-slate-200 tw-text-slate-900" type="button">
+              Add to bag
+            </button>
+          </div>
 
 
 
