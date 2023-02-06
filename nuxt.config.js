@@ -116,9 +116,6 @@ export default {
       short_name: 'Avimar International',
       lang: 'en',
       theme_color: '#ffffff'
-    },
-    icon: {
-      /* icon options */
     }
   },
 
