@@ -146,7 +146,7 @@
                       <p aria-hidden="true" class="tw-mt-1">Shop now</p>
                     </div>
                   </div>
-                  <div class="tw-row-start-1 tw-grid tw-grid-cols-3 tw-gap-y-4 tw-gap-x-8 tw-text-sm">
+                  <div class="tw-row-start-1 tw-grid tw-grid-cols-3 tw-gap-y-1 tw-gap-x-4 tw-text-sm">
                     <div class="nav-item scrollable-menu dropdown"
                         v-for="cat in brand.subcategories"
                         :key="cat.name"
@@ -162,7 +162,7 @@
                       >
                         <span
                             class="
-                            tw-capitalize tw-text-sm tw-font-semibold
+                            tw-capitalize tw-text-xs tw-font-semibold
                           "
                         >{{ cat.name.replace(/-/g, ' ') }}</span
                         >
@@ -216,26 +216,15 @@
           </NuxtLink>
         </div>
 
-        <NuxtLink
+        <!-- <NuxtLink
             to="/cart"
             class="nav-link text-danger d-inline mobile-icon"
             style="cursor: pointer;margin-right: -24px;"
             v-show="windowWidth < 768"
         >
-          <svg
-              class="tw-w-6 tw-h-6 tw-text-red-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-            ></path>
-          </svg>
+        <svg class="tw-w-6 tw-h-6 tw-text-red-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+</svg>
           <small
               class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-indigo-600 tw-p-1 tw-text-white tw-shadow-sm hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-[#277fbe] focus:tw-ring-offset-2 tw-relative"
               style="top: -10px;"
@@ -273,7 +262,7 @@
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"
           ></path>
-        </svg>
+        </svg> -->
         <div class="collapse navbar-collapse"></div>
 
         <div
@@ -356,20 +345,9 @@
                   id="spring"
                   style="cursor: pointer;font-weight:700;"
               >
-                <svg
-                    class="tw-w-6 tw-h-6 tw-text-gray-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                  ></path>
-                </svg>
+              <svg class="tw-w-6 tw-h-6 tw-text-gray-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+</svg>
                 <div
                     class="tw-inline-flex tw-items-center tw-px-2 tw-py-2 tw-rounded-full tw-border tw-border-transparent tw-bg-indigo-600 tw-w-5 tw-h-5 tw-text-white tw-text-sm tw-shadow-xs hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-[#277fbe] focus:tw-ring-offset-2 tw-relative tw-bottom-2 tw-right-2"
                 >
@@ -460,15 +438,15 @@
                   aria-labelledby="navbarDropdown"
                   v-else
               >
-                <NuxtLink to="/account/login" class="dropdown-item"
+                <NuxtLink to="/account/login" class="dropdown-item tw-text-white"
                 >Login
                 </NuxtLink
                 >
-                <NuxtLink to="/account/register" class="dropdown-item"
+                <NuxtLink to="/account/register" class="dropdown-item tw-text-white"
                 >Register
                 </NuxtLink
                 >
-                <NuxtLink to="/account/register" class="dropdown-item"
+                <NuxtLink to="/account/register" class="dropdown-item tw-text-white tw-font-bold"
                 >Sell
                 </NuxtLink
                 >
@@ -703,7 +681,7 @@ nav#navbarNav {
   }
 
   .scrollable-menu {
-    height: auto;
+    /* height: auto; */
     max-height: 40px;
     overflow-x: hidden;
   }
