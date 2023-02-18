@@ -30,7 +30,7 @@
       <!-- end products column-->
     </section>
 
-    <!-- drinks on offer -->
+    <!-- trending products -->
     <section class="tw-container tw-mx-auto tw-mt-4" id="container-2">
       <div class="tw-p-2">
         <h2 class="tw-capitalize tw-mt-4">Trending Products</h2>
@@ -42,8 +42,9 @@
         </LazyHydrate>
       </div>
     </section>
-    <!-- end drinks on offer-->
+    <!-- end trending products-->
 
+    <!-- shop by collection -->
     <div class="tw-container tw-mx-auto tw-px-4 tw-py-4 tw-my-2">
       <section
           aria-labelledby="collection-heading"
@@ -141,21 +142,21 @@ export default {
       collections: [
         {
           name: "Handcrafted Collection",
-          href: "#",
+          href: "laptops",
           imageSrc: "/images/deal1.jpg",
           imageAlt: "Brown leather key ring with brass metal loops and rivets on wood table.",
           description: "Keep your phone, keys, and wallet together, so you can lose everything at once.",
         },
         {
           name: "Organized Desk Collection",
-          href: "#",
+          href: "phones-and-tablets",
           imageSrc: "/images/deal2.jpg",
           imageAlt: "Natural leather mouse pad on white desk next to porcelain mug and keyboard.",
           description: "The rest of the house will still be a mess, but your desk will look great.",
         },
         {
           name: "Focus Collection",
-          href: "#",
+          href: "electronics/smart-tvs",
           imageSrc: "/images/deal3.jpg",
           imageAlt: "Person placing task list card into walnut card holder next to felt carrying case on leather desk pad.",
           description: "Be more productive than enterprise project managers with a single piece of paper.",
