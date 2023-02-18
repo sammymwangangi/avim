@@ -9,55 +9,52 @@
         :key="index"
       >
       <!-- Image -->
-        <NuxtLink
+      <nuxt-link
           :to="`/product/${product.url}`"
-          class="tw-flex-1 tw-no-underline tw-p-0 tw-m-0"
+          class="tw-flex-1 tw-no-underline"
         >
           <div
             v-if="product.label.includes('on-offer')"
-            class="ribbon tw-absolute tw-top-0 tw-left-0 tw-bg-red-600 tw-text-white tw-font-medium tw-text-xs tw-text-center tw-uppercase tw-p-1 tw-shadow-md tw-shadow-red-600/30 tw-whitespace-no-wrap"
+            class="ribbon tw-absolute tw-top-0 tw-left-0 tw-bg-[#277fbe] tw-text-white tw-font-medium tw-text-xs tw-text-center tw-uppercase tw-p-1 tw-shadow-md tw-shadow-[#277fbe]/30 tw-whitespace-no-wrap"
           >
             Offer
           </div>
           <img
             :src="
-              decodeURIComponent(`${
+              `${
                 product.image_url === 'undefined' || product.image_url === ''
                   ? ''
                   : product.image_url
-              }`)
+              }`
             "
             class="img-fluid"
             width="320"
             height="362"
             :alt="`${product.name}-nairobidrinks`"
           />
-        </NuxtLink>
+        </nuxt-link>
         <!-- sub-category -->
         <div
-          class="tw-text-gray-500 tw-text-left tw-capitalize tw-font-thin tw-text-xs tw-italic tw-w-auto"
-          style="font-family: 'Roboto', sans-serif"
+          class="tw-text-gray-400 tw-text-left tw-capitalize tw-font-thin tw-text-xs tw-italic tw-w-auto"
         >
           <template v-if="Object.keys(product.subcategory).length !== 0">{{
             product.subcategory[0].replace(/-/g, ' ')
           }}</template>
-          <template>{{ '' }}</template>
-          | {{ product.percentage }}%
         </div>
         <!-- product name -->
         <div class="tw-text-left">
-          <NuxtLink
+          <nuxt-link
             :to="`/product/${product.url}`"
             class="tw-no-underline tw-text-left"
           >
             <div
-              class="hover:tw-z-50 tw-text-gray-600 tw-font-semibold tw-text-sm tw-capitalize tw-line-clamp-2"
+              class="hover:tw-z-50 tw-text-gray-700 tw-mt-2 tw-text-sm tw-capitalize tw-line-clamp-2"
               :title="product.name"
             >
               {{ product.name | truncate(20, '...') }}
             </div>
             <ul
-              class="list-unstyled tw-space-y-1 tw-text-xs"
+              class="list-unstyled tw-space-y-1 tw-text-md tw-mt-2"
               v-for="quantity in product.quantities"
               :key="quantity.quantity"
             >
@@ -65,13 +62,12 @@
                 class="tw-flex tw-justify-start"
                 style="font-family: 'Roboto', sans-serif;margin-bottom:-1rem"
               >
-                <div class="tw-text-gray-800">{{ quantity.quantity }}</div>
-                <span class="tw-font-semibold tw-text-gray-900 tw-ml-2">{{
+                <span class="tw-font-semibold tw-text-gray-900">{{
                   quantity.discount | currency
                 }}</span>
               </li>
             </ul>
-          </NuxtLink>
+          </nuxt-link>
         </div>
         <!-- out-of-stock -->
         <div>
@@ -85,36 +81,30 @@
         </div>
         <!-- icons -->
         <div
-          class="tw-flex tw-justify-around tw-px-2 tw-py-2"
+          class="tw-flex tw-space-x-4 tw-px-2 tw-py-2"
           style="font-family: 'Roboto', sans-serif;margin-top: 5px;"
         >
+        <div class="tw-flex-auto tw-flex tw-space-x-4">
+          <div
+              v-b-modal="`${product.url}`"
+              @click="productInfo(product)"
+              :disabled="product.available === false"
+              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+            >
+            Buy now
+          </div>
           <div
             v-b-modal="`${product.url}`"
             @click="productInfo(product)"
             :disabled="product.available === false"
-            class="tw-self-end"
+            class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-px-3 tw-py-1.5 tw-text-xs tw-font-medium tw-text-gray-800 hover:tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
           >
-            <fa
-              :icon="['fas', 'cart-plus']"
-              title="cart"
-              style="font-size:1.2em;"
-            ></fa>
+            Add to cart
           </div>
-          <div
-            v-b-modal="`wp-${product.url}`"
-            @click="whatsAppInfo(product)"
-            :disabled="product.available === false"
-            class="tw-self-end"
-          >
-            <fa
-              :icon="['fab', 'whatsapp']"
-              title="WhatsApp Order"
-              style="font-size:1.2em; color:#28AB81;"
-            ></fa>
-          </div>
+        </div>
 
           <div
-            class="tw-self-end"
+            class="tw-flex-none tw-flex tw-items-center tw-justify-center tw-w-9 tw-h-9 tw-rounded-full tw-bg-red-50"
             @click="wishList(product)"
             style="cursor: pointer"
           >
@@ -127,12 +117,7 @@
               ></fa>
             </b>
             <b v-else>
-              <fa
-                :icon="['far', 'heart']"
-                title="favorite"
-                class="tw-text-red-600"
-                style="font-size:1.2em;;"
-              ></fa>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-red-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
             </b>
           </div>
           <!-- start modal -->
@@ -141,15 +126,17 @@
             :active-product="activeProduct"
             :selected-quantity="selectedQuantity"
             :price="price"
+            :display-id="displayId"
           ></AddToCart>
           <!-- end modal -->
           <!-- start whatsApp modal -->
-          <WhatsAppOrder
+          <!-- <WhatsAppOrder
             :product="product"
             :active-product="activeProduct"
             :selected-quantity="selectedQuantity"
             :price="price"
-          ></WhatsAppOrder>
+            :display-id="displayId"
+          ></WhatsAppOrder> -->
           <!-- end whatsApp modal -->
         </div>
       </div>

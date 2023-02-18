@@ -141,6 +141,7 @@
   </div>
 </template>
 
+
 <script>
 import { mapState } from 'vuex';
 const AddToCart = () => import('~/components/Home/AddCart');
