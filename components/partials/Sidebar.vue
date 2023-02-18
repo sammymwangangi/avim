@@ -8,8 +8,7 @@
             <ul class="list-unstyled">
               <li v-for="(category, index) in group" :key="index">
                 <a
-                  class="pb-4 text-dark text-decoration-none mx-3"
-                  style="font-size:1.2em; font-weight:500; line-height:46px;"
+                  class="tw-pb-2 tw-text-gray-800 tw-no-underline tw-mx-4 tw-font-medium tw-text-xs"
                   :href="`/${category.url}`"
                   >{{ category.name | capitalize }}</a
                 >
@@ -17,13 +16,6 @@
 
             </ul>
           </div>
-        </div>
-        <div class="">
-          <nuxt-link
-            to="/blog"
-            class="tw-capitalize tw-no-underline tw-text-xl tw-font-medium tw-text-gray-700 mx-3"
-            >Blog</nuxt-link
-          >
         </div>
       </template>
     </div>

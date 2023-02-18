@@ -216,9 +216,9 @@
           </NuxtLink>
         </div>
 
-        <!-- <NuxtLink
+        <NuxtLink
             to="/cart"
-            class="nav-link text-danger d-inline mobile-icon"
+            class="nav-link tw-text-red-600 d-inline mobile-icon"
             style="cursor: pointer;margin-right: -24px;"
             v-show="windowWidth < 768"
         >
@@ -236,7 +236,7 @@
         >
         <NuxtLink
             to="/favorite"
-            class="nav-link text-danger mobile-icon d-inline tw-cursor-pointer tw-mr-2"
+            class="nav-link tw-text-red-600 mobile-icon d-inline tw-cursor-pointer tw-mr-2"
             style="cursor: pointer; margin-right: 2px;"
             v-show="windowWidth < 768"
         >
@@ -262,7 +262,7 @@
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"
           ></path>
-        </svg> -->
+        </svg>
         <div class="collapse navbar-collapse"></div>
 
         <div
