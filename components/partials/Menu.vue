@@ -33,7 +33,7 @@
               no-caret
               style="margin-left: 30px;"
           >
-            <template #button-content style="font-size: .5em;">
+            <template #button-content>
               <fa
                   :icon="['far', 'user']"
                   title="User Account"
