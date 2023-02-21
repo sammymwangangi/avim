@@ -28,54 +28,7 @@
             </NuxtLink>
           </li>
           <!-- Categories -->
-          <li class="nav-item dropdown" v-for="(brand, key) in navs" :key="key">
-            <NuxtLink
-              class="nav-link dropdown-toggle"
-              :to="`/${brand.url}`"
-              v-bind:id="key"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <span
-                class="tw-text-sm tw-font-medium tw-text-white tw-capitalize"
-                >{{ brand.name }}</span
-              >
-            </NuxtLink>
-            <ul
-              class="
-                dropdown-menu
-                tw-bg-[#277FBE] tw-mx-auto tw-w-screen tw-h-screen tw-px-8
-              "
-              v-bind:aria-labelledby="key"
-            >
-              <li
-                class="nav-item scrollable-menu dropdown"
-                v-for="cat in brand.subcategories"
-                :key="cat.name"
-              >
-                <NuxtLink
-                  :to="`/${brand.url}/${cat.name}`"
-                  class="
-                    dropdown-item
-                    scrollable-menu
-                    text-capitalize
-                    dropdown-toggle
-                  "
-                  v-bind:id="cat.name"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <span class="tw-capitalize tw-text-sm tw-font-semibold">{{
-                    cat.name.replace(/-/g, " ")
-                  }}</span>
-                </NuxtLink>
-              </li>
-            </ul>
-          </li>
+          
           <!-- Blog -->
           <li class="nav-item">
             <NuxtLink to="/blog" class="tw-text-sm tw-font-medium tw-text-white"
@@ -98,3 +51,24 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    checkAll: {
+      get: function () {
+        return this.langs ? this.checked.length == this.langs.length : false;
+      },
+      set: function (value) {
+        var checked = [];
+        if (value) {
+          this.langs.forEach(function (lang) {
+            checked.push(lang.id);
+          });
+        }
+        this.checked = checked;
+      }
+    }
+  }
+}
+</script>
