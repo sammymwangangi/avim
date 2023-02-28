@@ -82,17 +82,17 @@
         <!-- icons -->
         <div
           class="tw-flex tw-space-x-4 tw-px-2 tw-py-2"
-          style="font-family: 'Roboto', sans-serif;margin-top: 5px;"
+          style="font-family: 'Roboto', sans-serif; margin-top: 5px;"
         >
         <div class="tw-flex-auto tw-flex tw-space-x-4">
           <div
-              v-b-modal="`${product.url}`"
-              @click="productInfo(product)"
-              :disabled="product.available === false"
+              @click="addToCart(product)"
+              :disabled="product.available == false"
               class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
             >
             Buy now
           </div>
+
           <div
             v-b-modal="`${product.url}`"
             @click="productInfo(product)"
@@ -128,16 +128,6 @@
             :price="price"
             :display-id="displayId"
           ></AddToCart>
-          <!-- end modal -->
-          <!-- start whatsApp modal -->
-          <!-- <WhatsAppOrder
-            :product="product"
-            :active-product="activeProduct"
-            :selected-quantity="selectedQuantity"
-            :price="price"
-            :display-id="displayId"
-          ></WhatsAppOrder> -->
-          <!-- end whatsApp modal -->
         </div>
       </div>
       <!-- end products column-->
@@ -165,13 +155,19 @@ export default {
     return {
       activeProduct: '',
       price: {},
+      product: {},
       selectedQuantity: null,
+      quantity: 1,
     };
   },
   computed: {
     ...mapState({
+      cart: (state) => state.cart.cart,
       favorite: (state) => state.favorite.favorite,
     }),
+    total() {
+      return this.quantity * this.price.discount;
+    },
   },
   methods: {
     productInfo(product) {
@@ -192,6 +188,32 @@ export default {
       } else {
         this.$store.commit('favorite/addToFavorite', product);
         this.$toast.success('Added to favorites');
+      }
+    },
+    // Add to cart
+    addToCart(product) {
+      this.item = {
+        productName: product.name,
+        productImage: product.image,
+        productImageUrl: product.image_url,
+        productId: product._id,
+        productQuantity: this.quantity,
+        productUnit: this.price.quantity,
+        productType: product.category,
+        price: this.price.discount,
+        subTotal: this.price.discount * this.quantity,
+      };
+      let found = this.cart.find(
+          (record) => record.productId === this.item.productId
+      );
+      if (found) {
+        return false;
+        // this.$toast.info('Item already in cart');
+      } else if (this.item.productQuantity < 1) {
+        this.$toast.warning('Quantity must be equal or greater than 1');
+      } else {
+        this.$store.commit('cart/addToCart', this.item);
+        this.$toast.success('Added to cart');
       }
     },
   },
