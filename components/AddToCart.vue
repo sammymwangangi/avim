@@ -124,7 +124,7 @@ export default {
         productName: this.activeProduct.name,
         productImage: this.activeProduct.image,
         productImageUrl: this.product.image_url,
-        productId: this.activeProduct._id,
+        productId: this.activeProduct.id,
         productQuantity: this.quantity,
         productUnit: this.price.quantity,
         productType: this.activeProduct.category,
