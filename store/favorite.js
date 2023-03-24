@@ -3,7 +3,7 @@ export const state = () => ({
 })
 export const mutations = {
     addToFavorite(state, item) {
-        let found = state.favorite.find(product => product._id === item._id);
+        let found = state.favorite.find(product => product.id === item.id);
         if (found) {
             let index = state.favorite.indexOf(item);
             state.favorite.splice(index, 1)

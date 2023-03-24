@@ -6,7 +6,7 @@
       <div
         class="tw-flex tw-flex-col tw-min-h-[360px] tw-bg-white tw-relative tw-p-1 tw-shadow-md hover:tw-shadow-xl tw-rounded-md tw-transition tw-duration-700 tw-ease-in-out tw-transform hover:-tw-translate-y-1 hover:tw-scale-100 tw-overflow-hidden"
         v-for="product in products"
-        :key="product._id"
+        :key="product.id"
       >
         <nuxt-link
           :to="`/product/${product.url}`"
@@ -102,7 +102,7 @@
             @click="wishList(product)"
             style="cursor: pointer"
           >
-            <b v-if="favorite.find((item) => item._id === product._id)">
+            <b v-if="favorite.find((item) => item.id === product.id)">
               <fa
                 icon="heart"
                 title="favorite"
@@ -191,7 +191,7 @@ export default {
       this.price = kivy;
     },
     wishList(product) {
-      let found = this.favorite.find((record) => record._id === product._id);
+      let found = this.favorite.find((record) => record.id === product.id);
       if (found) {
         this.$store.commit('favorite/removeFromFavorite', product);
       } else {
@@ -205,7 +205,7 @@ export default {
         productName: product.name,
         productImage: product.image,
         productImageUrl: product.image_url,
-        productId: product._id,
+        productId: product.id,
         productQuantity: this.quantity,
         productUnit: this.price.quantity,
         productType: product.category,
