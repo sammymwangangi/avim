@@ -125,7 +125,21 @@
               >
                 <span
                     class="tw-text-sm tw-font-medium tw-text-white tw-capitalize md:tw-h-auto"
-                >{{ brand.name }}</span
+                >
+                <div v-if="brand.name === 'home'">
+                  Home & Office
+                </div>
+                <div v-else-if="brand.name === 'health'">
+                  Health & Beauty
+                </div>
+                <div v-else-if="brand.name === 'C'">
+                  C
+                </div>
+                <div v-else>
+                  
+                  {{ brand.name }}
+                </div>
+                </span
                 >
               </NuxtLink>
               <ul
