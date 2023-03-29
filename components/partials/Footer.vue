@@ -36,7 +36,21 @@
               <div role="list" class="tw-flex tw-flex-col tw-mt-4 tw-space-y-4" v-for="(group, i) in groupedCategories"
                   :key="i">
                 <div v-for="(category, index) in group" :key="index">
-                  <NuxtLink :to="`/${category.url}`" class="tw-text-base tw-text-gray-300 hover:tw-text-white">{{ category.name | capitalize }}</NuxtLink>
+                  <NuxtLink :to="`/${category.url}`" class="tw-text-base tw-text-gray-300 hover:tw-text-white">
+                    <div v-if="category.name === 'home'">
+                  Home & Office
+                </div>
+                <div v-else-if="category.name === 'health'">
+                  Health & Beauty
+                </div>
+                <div v-else-if="category.name === 'phones'">
+                  Phones & Tablets
+                </div>
+                <div v-else>
+                  
+                  {{ category.name | capitalize }}
+                </div>
+                  </NuxtLink>
                 </div>
               </div>
             </div>

@@ -132,8 +132,8 @@
                 <div v-else-if="brand.name === 'health'">
                   Health & Beauty
                 </div>
-                <div v-else-if="brand.name === 'C'">
-                  C
+                <div v-else-if="brand.name === 'phones'">
+                  Phones & Tablets
                 </div>
                 <div v-else>
                   
