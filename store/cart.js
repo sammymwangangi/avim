@@ -11,6 +11,12 @@ export const mutations = {
             state.cart.push(item)
         }
     },
+    buyNow(state, item) {
+        
+        state.cart.push(item)
+        
+    },
+
     cartTotals(state,sum) {
          sum = 0;
         state.cart.forEach(e => {

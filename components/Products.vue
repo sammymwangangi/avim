@@ -86,7 +86,7 @@
         >
         <div class="tw-flex-auto tw-flex tw-space-x-4">
           <div
-              @click="addToCart(product)"
+              @click="addToCart()"
               :disabled="product.available == false"
               class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
             >
@@ -150,6 +150,10 @@ export default {
       type: Array,
       required: true,
     },
+    displayId: {
+      required: true,
+      type: String,
+    },
   },
   data() {
     return {
@@ -191,7 +195,7 @@ export default {
       }
     },
     // Add to cart
-    addToCart(product) {
+    addToCart() {
       this.item = {
         productName: product.name,
         productImage: product.image,
