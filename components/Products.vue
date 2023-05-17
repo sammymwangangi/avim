@@ -95,7 +95,7 @@
               v-b-modal="`${product.url}`"
               @click="productInfo(product)"
               :disabled="product.available === false"
-              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-px-3 tw-py-1.5 tw-text-xs tw-font-medium tw-text-gray-800 hover:tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+              class="tw-inline-flex tw-items-center tw-rounded-full tw-bg-blue-100 tw-px-2 tw-py-1 tw-text-xs tw-font-medium tw-text-blue-700"
             >
               Add to cart
             </div>
