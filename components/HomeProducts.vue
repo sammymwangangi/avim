@@ -77,19 +77,20 @@
           class="tw-flex tw-space-x-4 tw-px-2 tw-py-2"
           style="font-family: 'Roboto', sans-serif; margin-top: 5px"
         >
-          <div class="tw-flex-auto tw-flex tw-space-x-4">
+        <div class="tw-flex-auto tw-flex tw-space-x-4">
             <div
               @click="buyNow(product)"
               :disabled="product.available == false"
-              class="tw-cursor-pointer tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+              class="tw-cursor-pointer tw-inline-flex tw-items-center tw-rounded-full tw-bg-[#FE902D] tw-px-2 tw-py-1 tw-text-xs tw-font-medium tw-text-white"
             >
-              Buy now
+              Buy Now
             </div>
+
             <div
               v-b-modal="`${product.url}-${displayId}`"
               @click="productInfo(product)"
               :disabled="product.available === false"
-              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-px-3 tw-py-1.5 tw-text-xs tw-font-medium tw-text-gray-800 hover:tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6] focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+              class="tw-inline-flex tw-items-center tw-rounded-full tw-bg-[#1b88d6]/80 tw-px-2 tw-py-1 tw-text-xs tw-font-medium tw-text-white tw-ring-1 tw-ring-inset tw-ring-[#1b88d6]/20"
             >
               Add to cart
             </div>
