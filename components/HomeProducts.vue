@@ -210,8 +210,8 @@ export default {
           (record) => record.productId === this.item.productId
       );
       if (found) {
-        return false;
-        // this.$toast.info('Item already in cart');
+        // return false;
+        this.$toast.info('Item already in cart');
       } else if (this.item.productQuantity < 1) {
         this.$toast.warning('Quantity must be equal or greater than 1');
       } else {

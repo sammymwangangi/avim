@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "../.."
-		},
-		{
-			"path": "../../../avimar-new"
-		},
-		{
-			"path": "../../../mychat"
 		}
 	],
 	"settings": {}

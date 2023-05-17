@@ -105,7 +105,7 @@
             </svg>
           </a>
         </div>
-        <p class="tw-mt-8 tw-text-base tw-text-gray-400 md:tw-order-1 md:tw-mt-0">Copyright © 2022 Avimar International, Inc.</p>
+        <p class="tw-mt-8 tw-text-base tw-text-gray-400 md:tw-order-1 md:tw-mt-0">Copyright © 2023 Avimar International, Inc.</p>
       </div>
     </div>
   </footer>

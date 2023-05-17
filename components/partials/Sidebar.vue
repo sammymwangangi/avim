@@ -6,9 +6,9 @@
         <div class="row">
           <div class="col-6" v-for="(group, i) in groupedCategories" :key="i">
             <ul class="list-unstyled">
-              <li v-for="(category, index) in group" :key="index">
+              <li v-for="(category, index) in group" :key="index" class="tw-pb-6 tw-mx-4 tw-font-medium tw-text-md">
                 <a
-                  class="tw-pb-2 tw-text-gray-800 tw-no-underline tw-mx-4 tw-font-medium tw-text-xs"
+                  class="tw-text-gray-900 tw-no-underline"
                   :href="`/${category.url}`"
                   >{{ category.name | capitalize }}</a
                 >
@@ -83,7 +83,7 @@ export default {
   .nav-link {
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 1.9rem;
     z-index: 9999;
   }
 

@@ -86,11 +86,11 @@
         >
         <div class="tw-flex-auto tw-flex tw-space-x-4">
           <div
-              @click="addToCart()"
+              @click="buyNow(product)"
               :disabled="product.available == false"
-              class="tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
+              class="tw-cursor-pointer tw-inline-flex tw-items-center tw-rounded-full tw-border tw-border-transparent tw-bg-[#277fbe] tw-px-4 tw-py-1.5 tw-text-xs tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-[#1b88d6]focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2"
             >
-            Buy now
+            Buy Now
           </div>
 
           <div
@@ -195,24 +195,53 @@ export default {
       }
     },
     // Add to cart
-    addToCart() {
+    // addToCart() {
+    //   this.item = {
+    //     productName: product.name,
+    //     productImage: product.image,
+    //     productImageUrl: product.image_url,
+    //     productId: product._id,
+    //     productQuantity: this.quantity,
+    //     productUnit: this.price.quantity,
+    //     productType: product.category,
+    //     price: this.price.discount,
+    //     subTotal: this.price.discount * this.quantity,
+    //   };
+    //   let found = this.cart.find(
+    //       (record) => record.productId === this.item.productId
+    //   );
+    //   if (found) {
+    //     return false;
+    //     // this.$toast.info('Item already in cart');
+    //   } else if (this.item.productQuantity < 1) {
+    //     this.$toast.warning('Quantity must be equal or greater than 1');
+    //   } else {
+    //     this.$store.commit('cart/addToCart', this.item);
+    //     this.$toast.success('Added to cart');
+    //   }
+    // },
+
+    // Add to cart
+    buyNow(product) {
       this.item = {
         productName: product.name,
         productImage: product.image,
         productImageUrl: product.image_url,
-        productId: product._id,
+        productId: product.id,
         productQuantity: this.quantity,
         productUnit: this.price.quantity,
         productType: product.category,
-        price: this.price.discount,
-        subTotal: this.price.discount * this.quantity,
+        price: product.quantities[0].price,
+        subTotal: product.quantities[0].price * this.quantity,
       };
+      // console.log('Cart Item: '+JSON.stringify(this.item))
+      
       let found = this.cart.find(
           (record) => record.productId === this.item.productId
       );
       if (found) {
-        return false;
-        // this.$toast.info('Item already in cart');
+        // return false;
+        this.$toast.info('Item already in cart');
       } else if (this.item.productQuantity < 1) {
         this.$toast.warning('Quantity must be equal or greater than 1');
       } else {
